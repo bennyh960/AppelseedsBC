@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.1 Forms</title>
+    <style type="text/css">
+        .tab { margin-left: 400px; }
+    </style>
+</head>
+<body>
+    <head>
+        <h1 class="tab">Create an Account</h1>
+        <form class="tab">
+            <div>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email"><br>
+            </div>
+            <br>
+            <div>
+                <label for="password">Passowrd:</label><br>
+                <input type="password" id="password" name="password"><br>
+            </div>
+            <br>
+            <div>
+                <label for="age">Age</label><br>
+                <select><br>
+                    <option value="" disabled selected>sellect Age</option>
+                    <option value="18_25">18-25</option>
+                    <option value="25_35">25-35</option>
+                    <option value="above35 ">Above 35</option>
+                </select>
+            </div>
+            <br>
+            <br>
+            <div>
+                <label for="massage">Tell us about yourself:</label><br>
+                <textarea name="massage" id="massage" cols="50" rows="10"></textarea>
+            </div>
+            <br>
+            <div>
+                <label for="agree"></label>
+                <input type="checkbox" name="agree" value="agree">I agree to the <a href="">terms of service</a>
+            </div>
+            <br>
+            <div>
+                <button type="submit">Sign up</button>
+            </div>
+        </form>
+    </head>
+    
+</body>
+</html>

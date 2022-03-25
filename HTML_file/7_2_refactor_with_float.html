@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7.2 refactor with float</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        .container {
+            background-color: blue;
+            border: 2px solid gray;
+            height: 600px;
+            margin: auto;
+            /* max-width: 100%; */
+        }
+
+        .clr{
+            clear: both;
+        }
+
+        header {
+            height: 50px;
+            background-color: aquamarine; 
+            padding-left: 40%;    
+            border: 2px solid black;       
+        }
+        main {
+            padding: 20px;
+            margin: 20px;
+            width: calc(55% - 15px);
+            height: 400px;
+            background-color: aqua;
+            color: rgb(4, 37, 24);
+            float: left;
+            border-radius: 5%;
+            
+        }
+        aside {
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            margin-top: 50px;
+            margin-right: 90px;
+            width: 300px;
+            height: 350px;
+            background-color: bisque;
+            text-align: center;
+            float: right;  
+            border-radius: 20%;   
+        }
+        aside h3{
+            margin-top: 20px;
+        }
+
+        aside .cardText{
+            padding-left: 30%;
+            /* border: 2px solid black; */
+            text-align: left;
+        }
+        footer  {
+            color: aliceblue;
+            font-size: 1.5em;
+            /* border: black 3px solid; */
+            width: 300px;
+            margin-left: calc(100% - 380px);
+            padding-left: 50px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div>
+                <h1>Barcelona 2020-2021 <img src="https://karllusbec.files.wordpress.com/2012/10/fc-barcelona-logo.jpg" alt="barcaTag" height="30px"></h1>
+            </div>
+        </header>
+        <main>
+            <!-- clickable player  -->
+            <img src="https://photo.one.co.il/Image/GG/7,1/1541931.jpg" alt="team" usemap="#teamap" width="95%">
+            <map name="teamap">
+                <area shape="rect" coords="200,0,20,35" alt="Goalkeeper" href="https://he.wikipedia.org/wiki/%D7%9E%D7%90%D7%A8%D7%A7-%D7%90%D7%A0%D7%93%D7%A8%D7%94_%D7%98%D7%A8_%D7%A9%D7%98%D7%92%D7%9F">
+            </map>
+            <h3>Click on player for data (currently just Goalkeeper is available)</h3>
+        </main>
+        <aside>
+            <h3>Mark Andre T.St</h3>
+            <div id="MARK_ANDRE_TR">
+                <br>
+                <img src="https://www.sport5.co.il/Sip_Storage/FILES/1/size475x318/929701.jpg" alt="MarkAnderTerShtegen" width="80%">
+                <div class="cardText">
+                    <p><strong>Age:</strong> 29</p>
+                    <p><strong>Position:</strong> Gk</p>
+                    <p><strong>Win:</strong> 920 games</p>
+                    <p><strong>Loose: </strong> 40 games</p>
+                    <p><strong>Country:</strong> Germany</p> 
+                </div>
+            </div>
+        </aside>
+        <div class="clr"></div>
+        
+        <footer>
+            <a href="#" class="previous">&laquo; Previous</a>
+            <a href="#" class="next">Next &raquo;</a>
+
+
+        </footer> 
+    </div>
+    
+</body>
+</html>

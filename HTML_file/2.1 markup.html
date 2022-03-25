@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.1 Markup exercises</title>
+</head>
+<body>
+    <h1>Markup exercise 2.1 </h1>
+    <h3>An image from local directory</h3>
+    <!-- Local image -->
+    <img src="/images/instructions.png" alt="Instructions from PDF" width="300" height="400">
+    <h2>All headers</h2>
+    <h3>header 3</h3>
+    <h4>header 4</h4>
+    <h5>header 5</h5>
+    <h6>header 6</h6>
+
+    <h2>First Paragraph with bold and italic elements</h2>
+    <p>Lorem ipsum dolor sit amet consectetur <strong>This is Bold elements</strong>adipisicing elit. Laboriosam aperiam aliquam error consequatur saepe, est nobis, rerum amet accusamus nam earum vitae accusantium iusto mollitia aspernatur porro expedita voluptatum inventore?
+    Doloribus laborum perferendis <em>This is italic fontperspiciatis mollitia, quisquam, totam veritatis fugiat distinctio dolor commodi, ea fugit delectus corrupti assumenda inventore nisi accusamus eum? A recusandae, cupiditate dicta quos expedita dolores nulla in!
+    Amet sapiente minima ipsum quia sed cum saepe reprehenderit iure eum</em>, maiores accusamus laudantium suscipit porro asperiores explicabo quis molestiae deleniti aperiam modi quae atque adipisci placeat veniam sint? Nemo.</p>
+    <!-- external links -->
+    <p>
+        <a href="http://google.com">Move to google</a>
+    </p>
+    <p>
+        <a href="http://google.com" target="_blank">Google in a new tab</a>
+    </p>
+    <p>
+        <a href="https://mdl.appleseeds.org.il/login/index.php" target="_blank">Moodle</a>
+    </p>
+
+
+    <!-- Remote image (this is a special source where i can change the img randomly and change resolution eaisly)-->
+    <img src="https://source.unsplash.com/200x200/?building" alt="My image 2">
+
+
+    <h3>5 cool HTML markup(actually 8 markups)</h3>
+
+    <h4>1. The &lt;abber&gt; markup</h4> 
+        “abbr” is short for abbreviation! The idea here is that if you use a title (e.g. “Mr.”) or acronym (e.g. “POTUS”),<br>
+        the abbr tag indicates exactly what that abbreviation means.<br>
+    <strong>Example:</strong> <abbr title="President of the United States">“POTUS”</abbr> is the abbriviation of "President of the United States".
+    <br>
+    <br>
+    <h4>2. The &lt;del&gt; and &lt;ins&gt; markup</h4>
+    <p>
+        There is actually a tag for text that is struck-through and another that indicates the replacement text. This comes directly out of the semantic playbook to show that a piece of text should be deleted. <br>
+        <p>An example of this is:  Pluto <del>is</del> <ins>isn't</ins> a planet."</p>
+    </p>
+    <h4>3. The &lt;meter&gt; and &lt;progress&gt; markup</h4>
+    <p> 
+        <h5>meter</h5>
+        The next two elements in our list are similar, but definitely not the same. Meter is a built-in range to give an indication of good, medium or bad results. This gauge is a nifty tool built into <br>
+        browsers that is normally created using much more custom code and JavaScript.
+        <p>Example of in range value 60: <meter min="0" max="100" low="50" high="90" optimum="90" value="60">60%</meter></p>
+        <p>Example of low value: <meter min="0" max="100" low="50" high="90" optimum="90" value="10">10%</meter></p>
+        <p>Example of high value: <meter min="0" max="100" low="50" high="90" optimum="90" value="95">95%</meter></p>
+        <h5>progress</h5>
+        the progress tag is designed to show how far along something is, such as a project or task.<br>
+        For example, if you wanted to show a project is 70 percent complete, you could.<br>
+        <h3>Project status: <progress id="project" max="100" value="70">70%</progress></h3>
+    </p>
+
+    <h4>4. The &lt;details&gt; and &lt;summary&gt;</h4>
+    <p>
+        This is acordion feature for open and close (this is native for HTML according my resource)
+        <details>
+            <summary>item1 clickable</summary>
+            &nbsp;&nbsp;&nbsp;&nbsp;    HTML is fun.
+        </details>
+        <details>
+            <summary>item2 clickable</summary>
+            &nbsp;&nbsp;&nbsp;&nbsp;    I like proggraming.
+        </details>
+    </p>
+
+    <h4>5. &lt;blockquote&gt; and &lt;site&gt;</h4>
+        <figure>
+            <blockquote cite="https://en.wikipedia.org/wiki/Citizenship_in_a_Republic">
+                <p>It is not the critic who counts; not the man who points out how the strong man stumbles,<br>
+                or where the doer of deeds could have done them better...</p>
+            </blockquote>
+            <figcaption>--Teddy Roosevelt, <cite>Citizenship in a Republic Speach</cite></figcaption>
+        </figure>
+
+
+        
+
+</body>
+</html>

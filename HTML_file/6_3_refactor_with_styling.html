@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6.3 refactor and styling</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inspiration&family=Lato:ital,wght@0,100;1,400&family=Roboto+Condensed:wght@400;700&family=Roboto:ital,wght@0,100;0,300;1,700&display=swap" rel="stylesheet">
+    <style>
+        header {
+            /*  */
+            height: 50px;
+            /* width: 100%; */
+            background-color: aquamarine; 
+            padding-left: 40%;           
+        }
+        main {
+            
+            height: 400px;
+            padding-left: 30%;
+            /* background: url("https://photo.one.co.il/Image/GG/7,1/1541931.jpg")no-repeat center 40px; */
+            /* border: 3px solid red; */
+            background-color: aqua;
+            color: rgb(4, 37, 24);
+            
+        }
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            width: 300px;
+            height: 350px;
+            background-color: bisque;
+            line-height: 0.5em;
+            position: absolute;
+            left: 5%;
+            color: blueviolet;
+            /* border: 3px solid red; */
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            
+        }
+        .card2 {
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            width: 300px;
+            height: 350px;
+            background-color: bisque;
+            line-height: 0.5em;
+            position: absolute;
+            left: 37%;
+            color: blueviolet;
+            /* border: 3px solid red; */
+            
+        }
+        .card3 {
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            width: 300px;
+            height:350px;
+            background-color: bisque;
+            line-height: 0.5em;
+            position: absolute;
+            left: 70%;
+            color: blueviolet;
+            /* border: 3px solid red; */
+            
+        }
+        
+    </style>
+</head>
+<body style="background-color: brown;">
+    <header>
+        <div>
+            <h1>Barcelona 2021-2022 <img src="https://karllusbec.files.wordpress.com/2012/10/fc-barcelona-logo.jpg" alt="barcaTag" height="30px"></h1>
+        </div>
+    </header>
+    <main>
+        <h3>Click on player for data (currently just Goalkeeper is available)</h3>
+        <!-- clickable player  -->
+        <img src="https://photo.one.co.il/Image/GG/7,1/1541931.jpg" alt="team" usemap="#teamap">
+        <map name="teamap">
+            <area shape="rect" coords="200,0,20,35" alt="Goalkeeper" href="https://he.wikipedia.org/wiki/%D7%9E%D7%90%D7%A8%D7%A7-%D7%90%D7%A0%D7%93%D7%A8%D7%94_%D7%98%D7%A8_%D7%A9%D7%98%D7%92%D7%9F">
+        </map>
+    </main>
+    <aside>
+        <!-- show player card -->
+        <div class="card">
+            <img src="https://www.sport5.co.il/Sip_Storage/FILES/1/size475x318/929701.jpg" alt="MarkAnderTerShtegen" width="100%">
+            <p>Age: 29</p>
+            <p>Position: Gk</p>
+            <p>Win : 920 games</p>
+            <p>Loose : 40 games</p>
+            <p>Country: Germany</p>
+
+        </div>
+        <div class="card2">
+            <img src="https://photo.one.co.il/Image/GG/7,1/1556740.jpg" alt="Pedri" width="100%" height="63%">
+            <p>Age: 18</p>
+            <p>Position: CM/RM</p>
+            <p>Win : 89 games</p>
+            <p>Loose : 3 games</p>
+            <p>Country: Spain</p>
+
+        </div>
+        <div class="card3">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZPl6I299Hb2dXyK1Cg8xVGg3y10xXAQyF-VJyVepDCPLlO0624rNj_VLvww1zkHyy_Go&usqp=CAU" alt="Pique" width="100%" height="66%">
+            <p>Age: 33</p>
+            <p>Position: CB</p>
+            <p>Win : 990 games</p>
+            <p>Loose : 49 games</p>
+            <p>Country: Spain</p>
+
+        </div>
+    </aside>
+    
+    <footer>
+
+    </footer>
+    
+</body>
+</html>
