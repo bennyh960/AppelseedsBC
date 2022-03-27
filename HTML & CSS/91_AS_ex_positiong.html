@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9.1 positiong</title>
+    <style>
+        #outer {
+            width: 100px;
+            height: 100px;
+            background: darkcyan;
+            /* margin: 200px; */
+            position: relative;
+        }
+
+        
+            #inner {
+                width: 50px;
+                height: 50px;
+                background: lightgreen;
+                position: absolute;
+                top: 10px;
+            }
+        
+
+
+    </style>
+</head>
+<body>
+    <h1>fixed way </h1>
+    <p>i fixed the code by adding a position to the outer box which is the parent of the inner box
+        due to the inner position is absolute. The outerbox default position is static unless u change it
+    as i ded here, i changed to relative position. (which is related to the current contnent of the page.) </p>
+    <br><br>
+    <div id="outer">
+        <div id="inner"></div>
+    </div>
+    
+</body>
+</html>
