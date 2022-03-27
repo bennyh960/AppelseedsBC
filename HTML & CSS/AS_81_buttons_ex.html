@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8.1 Creating buttons</title>
+    <style>
+        h2 {
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            width: fit-content;
+            margin: auto;
+            font-size: 1em;
+        }
+        body{
+            background-color:blueviolet
+        }
+
+        ul {
+            width: 500px;
+            margin: auto;
+        }
+
+
+
+        ul .btn{
+            border: none;    
+            margin: 20px ;
+            padding: 0.1em;
+        }
+
+        ul .btn:first-child {
+            width: 170px;
+            height: 50px;
+            padding: 10px;
+            color:white;
+        }
+
+        ul .btn:nth-child(2) {
+            width: 100px;
+            height: 35px;
+            color:white;
+            margin-top: 20px;
+        }
+
+        ul .btn:last-child{
+            width: 70px;
+            height: 25px;
+            color:white;
+        }
+
+        #round .btn{
+            border-radius: 2em;
+        }
+
+        #flatGhost .btn {
+            background-color: transparent;
+        }
+        #roundGhost .btn {
+            background-color: transparent;
+            border-radius: 2em;
+        }
+
+        #left1{
+            background-color:rgb(105, 236, 105);
+        }
+        #left1:hover {
+            background-color: rgb(85,216,85);
+        }
+
+        #mid1{
+            background-color: red;
+        }
+        #mid1:hover{
+            background-color: rgb(148, 60, 60);
+        }
+
+        #right1{
+            background-color:rgb(41, 140, 233) ;
+        }
+        #right1:hover{
+            background-color: rgb(41, 140, 200);
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <h2>Flat</h2>
+        <ul>
+            <button class="btn" id="left1">Register</button>
+            <button class="btn" id="mid1" >Clear</button>
+            <button class="btn" id="right1">Submit</button>
+        </ul>
+        <br>
+    <h2>Round</h2>
+        <ul id="round">
+            <button class="btn" style="background-color:orange;">Register</button>
+            <button class="btn" style="background-color: yellow;">Clear</button>
+            <button class="btn" style="background-color: gray;">Submit</button>
+        </ul>
+        <br>
+    <h2>Flat ghost</h2>
+        <ul id="flatGhost">
+            <button class="btn" style="border: 2px solid rgb(105, 236, 105);">Register</button>
+            <button class="btn" style="border: 2px solid red;">Clear</button>
+            <button class="btn" style="border: 2px solid rgb(41, 140, 233);">Submit</button>
+        </ul>
+    <h2>Round ghost</h2>
+        <ul id="roundGhost">
+            <button class="btn" style="border: 2px solid orange;">Register</button>
+            <button class="btn" style="border: 2px solid yellow;">Clear</button>
+            <button class="btn" style="border: 2px solid gray;">Submit</button>
+        </ul>
+
+    
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30 Inline & block styling</title>
+    <style>
+        li {
+            display: inline;
+        }
+
+        li a {
+            padding-right: 20px;
+        }
+
+        img {
+            display: block;
+            margin: auto;
+        }
+
+        .box {
+            width: 33%;
+            /* will not work!!display cant using witdth on inline */
+            /* display: inline; */
+            display: inline-block;
+            box-sizing: border-box;
+
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin-bottom: 15px;
+        }
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#">Technology</a></li>
+        <li><a href="#">Business</a></li>
+        <li><a href="#">Fashion</a></li>
+    </ul>
+
+    <br><br>
+
+    <img src="/images/myImage.jpg" alt="My image">
+
+    <br><br>
+
+    <div class="box">
+        <h3>Heading</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit soluta assumenda cum, veniam labore blanditiis veritatis quod dignissimos adipisci ratione?</p>
+    </div>
+    <div class="box">
+        <h3>Heading</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit soluta assumenda cum, veniam labore blanditiis veritatis quod dignissimos adipisci ratione?</p>
+    </div>
+    <div class="box">
+        <h3>Heading</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit soluta assumenda cum, veniam labore blanditiis veritatis quod dignissimos adipisci ratione?</p>
+    </div>
+</body>
+</html>
