@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12.2 mobile responsive</title>
+    <style>
+        *{
+
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #333;
+            color: aliceblue;
+            text-align: center;
+            
+        }
+
+        .item {
+            /* margin: auto; */
+            width: 24%;
+            margin-left: 5px;
+            float: left;
+            background-color: #777;
+            border: 1px solid black;
+        }
+
+        @media(max-width:500px){
+            .item {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="item">
+        <h1>First item</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam tenetur nobis dolorem ut quas, minima sint magni provident iusto labore?</p>
+    </div>
+    <div class="item">
+        <h1>Second item</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam tenetur nobis dolorem ut quas, minima sint magni provident iusto labore?</p>
+    </div>
+    <div class="item">
+        <h1>Third item</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam tenetur nobis dolorem ut quas, minima sint magni provident iusto labore?</p>
+    </div>
+    <div class="item">
+        <h1>Forth item</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam tenetur nobis dolorem ut quas, minima sint magni provident iusto labore?</p>
+    </div>
+</body>
+</html>
