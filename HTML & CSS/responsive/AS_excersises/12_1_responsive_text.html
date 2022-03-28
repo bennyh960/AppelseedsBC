@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12.1 responsive text</title>
+    <style>
+
+        body{
+            background: black;
+            color: wheat;
+        }
+
+        h1,p {
+            display: none;
+            text-align: center;
+        }
+
+
+        @media(max-width:500px){
+            body {
+                background: gold;
+            }
+            #mobile p ,
+            #mobile h1{
+                display: block;
+                color: black;
+                font-size: larger;
+            }
+        }
+
+        @media(min-width:501px){
+            body {
+                background: green;
+            }
+            #normal p,
+            #normal h1 {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="normal"><h1>Normal</h1>
+        <p>other ipsum, dolor sit amet consectetur adipisicing elit. Saepe inventore doloribus voluptates adipisci deserunt dolore? Amet, pariatur! Culpa, similique voluptatibus.</p>
+    </div>
+
+    <div id="mobile"><h1>Mobile</h1>
+        <p>bb ipsum, dolor sit amet consectetur adipisicing elit. Saepe inventore doloribus voluptates adipisci deserunt dolore? Amet, pariatur! Culpa, similique sh .</p>
+    </div>
+</body>
+</html>
