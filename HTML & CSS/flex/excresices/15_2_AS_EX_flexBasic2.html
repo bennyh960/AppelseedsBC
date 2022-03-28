@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>48 Flex basics</title>
+    <title>15.2 Flex basics AS exercsises</title>
     <style>
         *{
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
@@ -16,16 +18,31 @@
 
         .flex-container {
             display: flex;
+            background-color: blanchedalmond;
+            width: 50%;
+            height: 50vh;
+            margin: auto;
         }
 
         .item {
-            background: f4f4f4;
-            border: #ccc solid 2px;
-            margin: 10px;
-            padding: 10px;
-            text-align: center;
-            border-radius: 10px;
-            width: 200px;
+            
+            margin-top: calc(10% + 25px);
+            height: 100px;
+            width: 100px;
+        }
+
+        .item-1 {
+           margin-left: 25%;
+           background: green;
+            
+        }
+        .item-2 {
+        
+            background-color: blue;
+            
+        }
+        .item-3 {
+            background: red;
         }
 
         
@@ -35,13 +52,13 @@
 <body>
     <div class="flex-container">
         <div class="item item-1">
-            <h3>Item 1</h3>
+            <h5>1</h5>
         </div>
         <div class="item item-2">
-            <h3>Item 2</h3>
+            <h5>2</h5>
         </div>
         <div class="item item-3">
-            <h3>Item 3</h3>
+            <h5>3</h5>
         </div>
     </div>
     
