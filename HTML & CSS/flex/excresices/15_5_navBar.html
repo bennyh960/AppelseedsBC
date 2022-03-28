@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15.5 Flex navbar</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            
+        }
+
+        .flex-container {
+            display: flex;
+            background: #8f8f8f;
+            flex-direction: row;
+            text-align: center;
+            justify-content: flex-end;
+            
+        }
+
+        .item {
+            padding: 1rem;
+        }
+        .item:not(.item-0):hover{
+            background: #c4c4c4;
+            cursor: pointer;
+            /* text-align: center; */
+        }
+
+        .item-0 {
+            font-size: large;
+            color: rgb(7, 7, 77);
+            /* align-self:flex-start; */
+            /* justify-self:start; */
+            margin-right: auto;
+        }
+
+        
+        main{
+            margin-top: 2rem;
+        }
+        
+
+        footer {
+            margin-top: 10rem;
+            text-align: center;
+        }
+
+        @media(max-width:500px){
+            .flex-container { 
+                flex-direction: column;
+                width: 80%;
+                margin: auto;
+                
+            }
+
+            .item-0{
+                margin: auto;
+                text-align: center;
+            }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="flex-container">
+            <div class="item item-0">
+                <span>APPELSEEDS</span>
+            </div>
+            <div class="item item-1">
+                <span>Home</span> 
+            </div>
+            <div class="item item-2">
+                <span>About</span> 
+            </div>
+            <div class="item item-3">
+                <span>Portfolio</span>
+            </div>
+            <div class="item item-4">
+                <span>Contact</span>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h1>My Page</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, eos voluptatum libero quibusdam unde alias delectus vel dolorum ea sint aliquid officiis amet dolore in maiores quasi corrupti, magnam magni quos rem fuga dolor expedita, pariatur nisi! Aspernatur beatae accusantium nesciunt? Quis consequatur dolorum beatae a officiis aut iste praesentium.</p>
+
+    </main>
+    <footer>
+        <p> &copy;All Right Reserved</p>
+    </footer>
+</body>
+</html>

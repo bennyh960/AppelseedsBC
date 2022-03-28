@@ -15,15 +15,13 @@
         }
 
         .flex-container {
-            background-color: #999;
             display: flex;
-            /* row is the default */
-            flex-direction: row;
-            /*align items:  will not affect if we havnt a specific height. IF flex dir is row so it will align to the cross axis */
-            /* more values is flex-start to top and flex end to bottom and strech */
-            align-items: center;
+            background-color: #999;
             height: 50vh;
+            flex-direction: row;
+            align-items:center;
             justify-content: center;
+            /* justify-content: space-around; */
         }
 
         .item {
@@ -33,10 +31,15 @@
             padding: 10px;
             text-align: center;
             border-radius: 10px;
-            /* width: 200px; */
-            /* flex:1 0 200px; (flex-grow , flex-shrink , flex-basis)  */
-            /* flex: 1 ; */
         }
+
+        
+
+        .item-1{
+            align-self: flex-start;
+            j
+        }
+        
 
         
 
