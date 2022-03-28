@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>12.3 Side part disapear</title>
+    <style>
+
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            background: #333;
+            overflow: hidden;
+            
+        }
+        
+        
+        nav li {
+            float: left;
+            /* height: 100%; */
+            margin-left: 20px;
+            padding: 10px;
+            color: aliceblue;
+            
+        }
+        
+        nav li a {
+            text-decoration: none;
+            display: block;
+            text-align: center;
+        }
+
+        nav li:hover {
+            background-color:#111;
+        }
+
+
+        aside {
+            float: left;
+            width: 30%;
+            background: #777;
+            height: 400px;
+            line-height: 1.4em;
+            
+        }
+        
+        main {
+            float: right;
+            width: calc(70% - 5px);
+            background: #999;
+            /* margin-left: 5px; */
+            margin: auto;
+            line-height: 1.4em;
+            height: 400px;
+            
+        }
+        
+        aside h1, main h1 {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .clr {
+            clear: both;
+        }
+        
+        footer {
+            text-align: center;
+        }
+
+        footer p {
+            margin: 50px;
+        }
+
+        @media(max-width:500px){
+            aside {
+                display: none;
+            }
+
+            main {
+                width: 100%;
+            }
+        }
+
+        </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#"></a>Site1</li>
+                <li><a href="#"></a>Site2</li>
+                <li><a href="#"></a>Site3</li>
+                <li><a href="#"></a>Site4</li>
+            </ul>
+        </nav>
+    </header>
+    <aside>
+        <h1>This is an advertisement</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo, exercitationem error illo nostrum non sint rerum ea pariatur officiis totam. Necessitatibus ut culpa, aperiam, exercitationem hic cum cupiditate fugit non dolores, quibusdam eveniet omnis corporis officiis molestiae? Tempora impedit quod esse vitae exercitationem beatae accusamus, illum, cumque, minus ipsam soluta.</p>
+        </div>
+    </aside>
+    <main>
+        <h1>This is the main content</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia eos sed asperiores beatae! Eius tempore similique ullam fugit harum error cum praesentium molestias corporis officia ratione neque repellendus rem voluptatibus eum, perferendis facilis a dignissimos maiores ad corrupti! Doloribus ab incidunt amet, ad ipsam nihil quaerat fugiat eius aliquam distinctio voluptatum placeat. Facere, doloribus. Reprehenderit ratione enim vel cupiditate consequatur, accusantium laborum eligendi quae illum soluta non itaque alias harum odio sint aut autem dolore, fugit quos. Architecto, necessitatibus est!</p>
+    </main>
+    <div class="clr"></div>
+    <footer>
+        <p>&copy;BennyH960 , Israel </p>
+    </footer>
+    
+</body>
+</html>
