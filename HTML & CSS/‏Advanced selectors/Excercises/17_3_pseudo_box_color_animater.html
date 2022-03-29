@@ -29,23 +29,9 @@
             left:100px;
         }
 
+        .item > .child:hover .parent{
 
-        .boxParent{
-            position: relative;
-            margin: auto;
-            background: green;
-            width: 200px;
-            height: 200px;
-        }
-        
-        .boxParent::after{
-            content: '';
-            position: absolute;
             background: blue;
-            left: 50%;
-            width: 50%;
-            height: 100%;
-            z-index: 1;
         }
 
     </style>
@@ -54,7 +40,5 @@
     <div class="item parent">
         <div class="item child"></div>
     </div>
-
-    <div class="boxParent"></div>
 </body>
 </html>
