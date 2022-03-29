@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nth Child</title>
+    <style>
+        li {
+            padding: 0.25rem;
+            margin: 0.25rem;
+            list-style: none;
+        }
+
+        /* first-child */
+        li:first-child{
+            background: red;
+        }
+        /* last-child */
+        li:last-child{
+            background: blue;
+        }
+
+        /* nth child - position3*/
+        li:nth-child(3){
+            background: purple !important; 
+            /* !important - due to nth child(3n-0) is write after this nth-child(3) 
+            and it related to same value -it sould be overwrite. But the important
+            says - hey , i am important :P  */
+        }
+
+        /* nth child - Every 3*/
+        li:nth-child(3n+0){
+            background: orange;
+        }
+        /* nth child - Every 3 after 7*/
+        li:nth-child(3n+7){
+            background: green;
+        }
+        /* nth child - Every odd*/
+        li:nth-child(odd){
+            background: gray;
+        }
+        /* nth child - Every odd*/
+        li:nth-child(even){
+            background: #ddd;
+        }
+
+    </style>
+</head>
+<body>
+    <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+        <li>item 4</li>
+        <li>item 5</li>
+        <li>item 6</li>
+        <li>item 7</li>
+        <li>item 8</li>
+        <li>item 9</li>
+        <li>item 10</li>
+        <li>item 11</li>
+        <li>item 12</li>
+        <li>item 13</li>
+        <li>item 14</li>
+        <li>item 15</li>
+        <li>item 16</li>
+        <li>item 17</li>
+        <li>item 18</li>
+        <li>item 19</li>
+        <li>item 20</li>
+    </ul>
+    
+</body>
+</html>
