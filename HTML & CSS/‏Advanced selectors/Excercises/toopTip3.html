@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 150px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+</style>
+
+<body style="text-align:center;">
+
+<h2>Top Tooltip w/ Bottom Arrow</h2>
+
+<div class="tooltip">
+    Hover over me 
+    <span class="tooltiptext">
+        Tooltip text and a lot of words 
+    </span>
+</div>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas, obcaecati tempora adipisci, beatae corrupti maxime, numquam fuga totam accusamus ratione repellat pariatur a consequuntur laudantium! Voluptatum facilis consequuntur sed iure.
+    <div class="tooltip">CSS <span class="tooltiptext">Cascading style Sheets languge </span></div>
+</body>
+</html>
