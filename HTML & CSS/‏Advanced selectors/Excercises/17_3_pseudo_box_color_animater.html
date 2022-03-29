@@ -11,34 +11,33 @@
             margin: 0;
             padding: 0;
         }
-        .item {
-            background-color: purple;
+
+        .boxParent{
+            position: relative;
+            margin: 200px auto;
+            background: purple;
             width: 200px;
             height: 200px;
-            /* border: 1px solid black; */
         }
-        .item .parent{
-            position: relative;
-        }
-        .item > .child {
-            /* position: relative; */
+        
+        .boxParent::after{
+            content: '';
             position: absolute;
             background: red;
-            /* width: 50%; */
-            width: 100px;
-            left:100px;
+            left: 50%;
+            width: 50%;
+            height: 100%;
+            z-index: 1;
         }
 
-        .item > .child:hover .parent{
-
+        .boxParent:nth-child(n):hover {
             background: blue;
         }
 
     </style>
 </head>
 <body>
-    <div class="item parent">
-        <div class="item child"></div>
-    </div>
+
+    <div class="boxParent"></div>
 </body>
 </html>
