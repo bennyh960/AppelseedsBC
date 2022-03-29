@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 2rem;
+        }
+        h1 {
+            text-align: center;
+            margin: 3rem;
+        }
+        .keyword{
+            color: blue;
+        }
+
+        .container{
+            width: 40vw;
+            margin: auto;
+            /* position: relative; */
+            border: 2px solid red;
+
+        }
+        
+        #benny,
+        #hassan {
+            position: relative;
+        }
+        .keyword:hover::before{
+            content: 'Benny is a good person.';
+            /* width: fit-content; */
+            text-align: center;
+            width: 200px;
+            padding: 0.3rem;
+            background-color: aqua;
+            position: absolute;
+            border-radius: 10px;
+            top: -3.3rem;
+            left: -100px;
+            /* border: 2px solid red; */
+
+        }
+
+        .keyword:hover::after{
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 20px solid aqua;
+            top: -18px;
+            left: -10px;
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>Neat Tool Tip</h1>
+    <div class="container">
+        
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium eos sed consequuntur saepe quibusdam excepturi deleniti minus quis quia aut consequatur ducimus, <span class="keyword" id="benny"> <span class="content"></span> Benny</span> doloribus enim ex porro esse quasi optio voluptate incidunt similique sapiente reprehenderit commodi alias. Enim laudantium <span class="keyword" id="hassan">Hassan</span> maiores, ipsam modi quibusdam! Quasi libero aspernatur, aperiam rerum dolorem quod.</p>
+
+    </div>
+</body>
+</html>

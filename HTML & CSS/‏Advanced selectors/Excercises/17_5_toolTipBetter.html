@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 2rem;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1 {
+            text-align: center;
+            margin: 3rem;
+        }
+        .keyword{
+            color: blue;
+        }
+
+        .container{
+            width: 40vw;
+            margin: auto;
+            /* background-color:#7d7d7d; */
+            padding: 10px;
+        }
+        
+        /* keywords */
+        #benny,
+        #hassan,
+        #appelseeds,
+        #css {
+            position: relative;
+        }
+        
+
+        .content-value{
+            display: none;
+            position: absolute;
+            border-radius: 15px;
+            background-color: aqua;
+            top: -3.3rem;
+            left: -50px;
+            width: 200px;
+            padding: 5px;
+            text-align:justify;
+        }
+
+        .keyword:hover .content-value{
+            display:inline;
+        }
+        .keyword:hover::before{
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 10px solid aqua;
+            top: -13px;
+            
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <h1>Neat Tool Tip</h1>
+    <div class="container">
+        <div class="tri"></div> <div class="tri2"></div>
+        <!-- the syntax for adding key-value -->
+        <!-- <span class="keyword" id="key id"> <span class="content-value">description content</span> key</span> -->
+
+        
+        <p>Lorem ipsum dolor,<span class="keyword" id="css"> <span class="content-value">Cascade Styling Sheets</span> css</span> sit amet consectetur adipisicing elit. Accusantium eos sed consequuntur saepe quibusdam excepturi deleniti minus quis quia aut consequatur ducimus, <span class="keyword" id="benny"> <span class="content-value">Benny is a good person</span> Benny</span> doloribus enim ex porro esse quasi optio voluptate incidunt similique sapiente reprehenderit commodi alias. Enim laudantium <span class="keyword" id="hassan"> <span class="content-value">Hassan is a perfect family</span> Hassan</span> maiores, ipsam modi quibusdam! Quasi libero aspernatur, aperiam rerum dolorem quod.lore 
+        Lorem ipsum dolor sit amet<span class="keyword" id="benny"> <span class="content-value">Benny is a good person </span> Benny</span> consectetur, adipisicing elit. Dicta dolorum eligendi consequuntur? Ipsam voluptatem corrupti id commodi sunt modi dolore.
+        </p>
+        <p>Lorem ipsum dolor, <span class="keyword" id="appelseeds"> <span class="content-value">Amazing bootcamp</span> appelseeds </span>sit amet consectetur adipisicing elit. Accusantium eos sed consequuntur saepe quibusdam excepturi deleniti minus quis quia aut consequatur ducimus, <span class="keyword" id="benny"> <span class="content-value">Benny is a good person</span> Benny</span> doloribus enim ex porro esse quasi optio voluptate incidunt similique sapiente reprehenderit commodi alias. Enim laudantium <span class="keyword" id="hassan"> <span class="content-value">Hassan is a perfect family</span> Hassan</span> maiores, ipsam modi quibusdam! Quasi libero aspernatur, aperiam rerum dolorem quod.lore 
+        Lorem ipsum dolor sit amet<span class="keyword" id="benny"> <span class="content-value">Benny is a good person </span> Benny</span> consectetur, adipisicing elit. Dicta dolorum eligendi consequuntur? Ipsam voluptatem corrupti id <span class="keyword" id="css"> <span class="content-value">Cascade Styling Sheets</span> CSS</span>commodi sunt modi dolore.
+        </p>
+
+    </div>
+</body>
+</html>
