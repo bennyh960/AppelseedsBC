@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>67 Targeted Selectors</title>
+    <style>
+        /* Direct child  li is chiled of ul  but not direct chiled of div in this example*/ 
+        div > p {
+            background: #ddd;
+        }
+
+        /* Directly after  */
+        div + p {
+            background: #333;
+            color: white;
+        }
+
+        /* By attribute  */
+        a[target='_blank'] {
+            background: red;
+            color: aquamarine;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <p>i am a child of the div above.</p>
+
+        <ul>
+            <li>item 1</li>
+            <li><p>item 2 - im grandchild of div but my father is ul </p></li>
+            <li>item 3</li>
+        </ul>
+
+        <p>im also child of the div above so i cibling of the first p.</p>
+    </div>
+    <p>i am directly after the div. what mean im in same level of him 
+        or in other words im cibling of the div
+    </p>
+
+    <a href="#">Page1 </a> <a href="#" target="_self">Page 2</a><a href="http://google.com" target="_blank" >Google</a>
+</body>
+</html>
