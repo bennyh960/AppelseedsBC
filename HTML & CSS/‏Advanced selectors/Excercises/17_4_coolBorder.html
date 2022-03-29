@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            padding: 0;
+            margin: 0;
+            background-color: black;
+            color: azure;
+        }
+        .container-outer{
+            width: 50vw;
+            /* background-color: aqua; */
+            margin: 10% auto;
+        }
+        .container{
+            margin: 4rem auto;
+            position: relative;
+            padding: 2rem;
+            /* border: greenyellow solid 2px; */
+            width: fit-content;
+            text-align: center;
+        }
+
+        .border-top::after{
+            content: '';
+            position: absolute;
+            top: 1.5rem;
+            left: -1rem;
+            height: 1rem;
+            width: 1rem;
+            border-top: 3px red solid;
+            border-left: 3px red solid;
+
+        }
+        .border-top::before{
+            content: '';
+            position: absolute;
+            top: 1.5rem;
+            right: -1rem;
+            height: 1rem;
+            width: 1rem;
+            border-top: 3px red solid;
+            border-right: 3px red solid;
+
+        }
+        .border-bottom::after{
+            content: '';
+            position: absolute;
+            bottom: 1.5rem;
+            left: -1rem;
+            height: 1rem;
+            width: 1rem;
+            border-bottom: 3px red solid;
+            border-left: 3px red solid;
+
+        }
+        .border-bottom::before{
+            content: '';
+            position: absolute;
+            bottom: 1.5rem;
+            right: -1rem;
+            height: 1rem;
+            width: 1rem;
+            border-bottom: 3px red solid;
+            border-right: 3px red solid;
+
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <div class="container-outer">
+        <div class="container">
+            <span class="border-top"></span>
+            <h2>Cool Border</h2>
+            <span class="border-bottom"></span>
+        </div>
+    </div>
+    
+</body>
+</html>
