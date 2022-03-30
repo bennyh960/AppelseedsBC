@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .btn-name{
+      font-size: 15px;
+      text-align: center;
+    }
+    .btn{
+       margin: 30px;
+       min-width: 100px;
+       height: 50px;
+       border: solid 2px black;
+       position: relative;
+       overflow: clip;
+    }
+    .btn::after{
+      content: '';
+      width: 100px;
+      height: 50px;
+      background-color: red;
+      position: absolute;
+      transition-duration: 1s;
+    }
+    #btn1::after{
+      content: 'YEAH!';
+      bottom: 50px;
+    }
+    #btn1:hover::after{
+      transform: translateY(50px);
+    }
+    /* 2 */
+    #btn{
+      color: aliceblue;
+    }
+    #btn2:hover{
+      color: aliceblue;
+    }
+    #btn2::after{
+      background-color: black;
+      content: '!';
+      right: 100px;
+      bottom: 0px;
+      z-index: -1;
+    }
+    #btn2:hover::after{
+      transform: translateX(100px);
+    }
+    /* 3 */
+    #btn3::after{
+      content: '';
+      bottom: 80px;
+      left:0;
+      background-color: yellow;
+      z-index: -1;
+      transform: rotate(90deg);
+    }
+    #btn3:hover::after{
+     transform: rotate(90deg);
+     transform: translateX();
+     transform: translateY(80px);
+    }
+    /* 4 */
+  
+    
+    #btn4::after{
+      content: 'YEAH!';
+      bottom: 0px;
+      background-color: black;
+      color: aliceblue;
+      transform: scale(2);
+      opacity: 0;
+    }
+    #btn4:hover::after{
+      transform: scale(1);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+ <div class="container">
+  <div class="btn" id="btn1">
+    <h1 class="btn-name" id="btn1-name">Translate</h1>
+  </div>
+  <div class="btn" id="btn2">
+    <h1 class="btn-name" id="btn2-name">Translate</h1>
+  </div>
+  <div class="btn" id="btn3">
+    <h1 class="btn-name" id="btn3-name">Translate</h1>
+  </div>
+  <div class="btn" id="btn4">
+    <h1 class="btn-name" id="btn4-name">Translate</h1>
+  </div>
+ </div>
+</body>
+</html>
