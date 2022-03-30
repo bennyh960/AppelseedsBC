@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyframes</title>
+    <style>
+        body {
+            background: #333;
+        }
+
+        .box {
+            background: white;
+            width: 200px;
+            height: 200px;
+            position: relative;
+            /* animation-name: animate1;
+            animation-duration: 2s;
+            /* animation-iteration-count: infinite; */
+            /* animation-iteration-count: 1; */
+            /* forwards make him stay in last mode */
+            /* animation-fill-mode: forwards; */
+            /* animation-delay: 1s; */
+            /* animation-direction: alternate; */
+            /* animation-direction: alternate-reverse; */
+            /* animation-timing-function:ease-in; */ 
+            animation: animate1 5s forwards 1s ease-in-out;
+        }
+
+        @keyframes animate1 {
+            from {
+                top:0;
+            }
+
+            to {
+                width: 100vw;
+                background-color: red;
+                top: calc(100vh - 200px);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    
+</body>
+</html>
