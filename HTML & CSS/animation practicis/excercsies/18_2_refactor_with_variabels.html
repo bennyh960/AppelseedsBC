@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13.2 landing page</title>
+    <script src="https://kit.fontawesome.com/35d411cefd.js" crossorigin="anonymous"></script>
+
+    <style>
+
+        :root{
+            --light-color:#f4f4f4;
+            --primary-color:steelblue;
+            --secondary-color:skyblue;
+            --max-width:1100px;
+            --box-1-width: 1;
+            --box-2-width: 1;
+            --text-padding :1rem; 
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            line-height: 1.6;
+        }
+        .container{
+            position: relative;
+            padding-top: var(--text-padding);
+        }
+        header .nav{
+            /* margin: 0; */
+            /* padding: 0; */
+            position: fixed;
+            height: 10vh;
+            width: 100vw;
+            background-color:var(--primary-color);
+            padding: var(--text-padding);
+            z-index: 2;
+            display: flex;
+            align-items: center;
+        }
+        
+        h3 {
+            /* margin: 0.5rem; */
+            /* padding: 2rem; */
+        }
+
+        header .cover-img {
+            position:relative;
+            top: 30px;
+            background: cornflowerblue url('https://scontent.ftlv1-1.fna.fbcdn.net/v/t31.18172-8/1277369_10201649411052644_816624048_o.jpg?_nc_cat=106&ccb=1-5&_nc_sid=e3f864&_nc_ohc=epwG9Vqr_08AX-TvteE&tn=lDKlI2KNTP6x_KUr&_nc_ht=scontent.ftlv1-1.fna&oh=00_AT9sSRimJ6cAoKXv5Hme7Ixfj1_DLltQO5z9UnaYO-R2LQ&oe=6268E834') no-repeat center center/cover;
+            background-size: 85vw 70%;
+            height: 45vh;
+        }
+        header h3 {
+            text-align: center;
+            padding-top: 15px;
+            padding-bottom: var(--text-padding);
+        }
+        header .nav a{
+            position:absolute;
+            text-align: right;
+            bottom: 20px;
+            right: 5vw;
+        }
+        main {
+            position: relative;
+            top: 32px ;
+            height: 1000px;
+            text-align: center;
+            /* border: 1px solid black; */
+        }
+        main .content {
+            padding-bottom: var(--text-padding);
+            display: flex;
+            margin: auto;
+            width: 90%;
+            background-color: var(--secondary-color);
+        }
+        
+        .box-1{
+            padding: calc(var(--text-padding) + 10px);
+            
+            flex: var(--box-1-width);
+        }
+        .box-2{
+            padding: calc(var(--text-padding) + 10px);
+            flex: var(--box-2-width);
+        }
+
+        @media(max-width:500px){
+            header .cover-img{
+                background: url('https://scontent.ftlv1-1.fna.fbcdn.net/v/t1.18169-9/12140671_10206941372348369_8765013128868409022_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=ZncG94qSRxcAX907cYf&_nc_ht=scontent.ftlv1-1.fna&oh=00_AT9vgd3Atp6ejVITUbAA0WoDQYYO0N3egQhuyGE38Iuw-g&oe=62665792') no-repeat center center/cover ;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <header>
+        <div class="nav">
+            <h3>My Page : Benny Hassan</h3>
+            <a href="https://www.facebook.com/benny.hassan.7" target="_blank"><i class="fa-brands fa-facebook fa-xl"></i></a>
+        </div>
+        <div class="cover-img">
+
+        </div>
+    </header>
+    <main>
+        <div class="content">
+        <div class="box-1">
+            <h3>Heading-1</h3>
+            <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit hic sunt maxime, voluptates est exercitationem libero officiis vero. Fugiat animi laborum quaerat voluptas alias ullam explicabo harum inventore vero obcaecati? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem officia blanditiis minima suscipit beatae perferendis cum sequi hic facilis corporis. Est corrupti tenetur numquam porro soluta eum repellendus consequuntur, quibusdam reprehenderit nulla enim itaque exercitationem corporis, aspernatur beatae? Et voluptatem alias odit cumque veritatis labore non. At sed ullam quisquam.</p>
+        </div>
+        <div class="box-2">
+            <h3>Heading-2</h3>
+            <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit hic sunt maxime, voluptates est exercitationem libero officiis vero. Fugiat animi laborum quaerat voluptas alias ullam explicabo harum inventore vero obcaecati? Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem officia blanditiis minima suscipit beatae perferendis cum sequi hic facilis corporis. Est corrupti tenetur numquam porro soluta eum repellendus consequuntur, quibusdam reprehenderit nulla enim itaque exercitationem corporis, aspernatur beatae? Et voluptatem alias odit cumque veritatis labore non. At sed ullam quisquam.</p>
+        </div>
+        
+    </div>
+    </main>
+    <aside>
+    </aside>
+    <footer>
+
+    </footer>
+</div>
+</body>
+</html>
