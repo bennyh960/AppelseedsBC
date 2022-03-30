@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        nav {
+            display: flex;
+            background-color: rgb(56, 215, 243);
+            align-items: center;
+        }
+        nav h2 {
+            margin-left: 20px;
+            flex-basis: 60%;
+        }
+
+        nav a {
+            color: black;
+            margin: 0 20px;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        a:hover {
+            background-color: #6f6f6f;
+            opacity: 0.5;
+        }
+
+        .img {
+            background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/BOSOM_BUDDIES.jpg/1200px-BOSOM_BUDDIES.jpg') no-repeat center center/cover;
+        }
+        
+
+        h1 {
+            background: #8f8f8f;
+            padding: 30px;
+            text-align: center;
+        }
+        .container {
+            background: #8f8f8f;
+            /* height: 100vh; */
+            display: flex;
+            justify-content: center;
+            /* border: 2px black solid; */
+            /* flex-wrap: wrap; */
+        }
+        
+        aside {
+            padding: 20px;
+            flex-basis: 30%;
+            
+            text-align: justify;
+            line-height: 2;
+
+        }
+
+        .container-1,.container-2{
+            flex-basis: 70%;
+            display: flex;
+            align-items: center;
+        }
+        
+        .img {
+            background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/BOSOM_BUDDIES.jpg/1200px-BOSOM_BUDDIES.jpg') center center/cover;
+            width: 300px;
+            height: 200px;
+            margin: 20px;
+        }
+
+        @media(max-width:500px){
+            nav ,.container,.container-1,.container-2 {
+                display: block;
+                margin: auto;
+                text-align: center;
+            }
+
+            .img {
+                margin: 20px auto;
+                /* width: 400px;
+                height: 100px; */
+            }
+
+            .menue{
+                display: flex;
+                flex-direction: column;
+            }
+            
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <h2>GATITO'S</h2>
+        <div class="menue">
+            <a href="">Home</a>
+            <a href="">Contact</a>
+            <a href="">Blog</a>
+            <a href="">Carres</a>
+        </div>
+    </nav>
+    <h1>Cat Addoption Site</h1>
+    <div class="container">
+        <aside>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel nemo, laborum consequuntur praesentium autem sunt quos reprehenderit veniam voluptatum voluptatibus! Ab quis sed error officia accusamus iste nam eaque, qui quae magni, cum cupiditate beatae perspiciatis doloremque iusto illo quo ipsa dolorem ipsam atque tenetur placeat, cumque ipsum? Porro, labore?</p>
+        </aside>
+        <main>
+            <div class="container-1">
+                <div class="img"></div>
+                <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt facere officiis corrupti dignissimos temporibus perferendis fuga labore est ducimus natus?</div>
+            </div>
+            <div class="container-2">
+                <div class="img"></div>
+                <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt facere officiis corrupti dignissimos temporibus perferendis fuga labore est ducimus natus?</div>
+            </div>
+
+        </main>
+    </div>
+</body>
+</html>
