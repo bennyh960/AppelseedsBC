@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        .container {
+            display: grid;
+            width: 60%;
+            height: 80vh;
+            margin: 10% auto;
+            grid-template-areas: 
+            'item-1 item-1 item-2 item-2 item-2 item-3 item-4 item-4'
+            'item-1 item-1 item-2 item-2 item-2 item-3 item-4 item-4'
+            'item-5 item-5 item-2 item-2 item-2 item-8 item-8 item-9'
+            'item-5 item-5 item-2 item-2 item-2 item-8 item-8 item-9'
+            'item-5 item-5 item-6 item-6 item-7 item-8 item-8 item-9'
+            'item-5 item-5 item-6 item-6 item-10 item-10 item-10 item-9'
+            'item-11 item-12 item-12 item-13 item-10 item-10 item-10 item-14'
+            'item-11 item-12 item-12 item-13 item-10 item-10 item-10 item-14';
+            gap: 5px;
+            
+        }
+
+        .item:nth-child(1){
+            background: url('./img/gal-1.jpeg') no-repeat center center/cover;
+            grid-area: item-1;
+        }
+        .item:nth-child(2){
+            background: url('./img/gal-2.jpeg') no-repeat center center/cover;
+            grid-area: item-2;
+        }
+        .item:nth-child(3){
+            background: url('./img/gal-3.jpeg') no-repeat center center/cover;
+            grid-area: item-3;
+        }
+        .item:nth-child(4){
+            background: url('./img/gal-4.jpeg') no-repeat center center/cover;
+            grid-area: item-4;
+        }
+        .item:nth-child(5){
+            background: url('./img/gal-5.jpeg') no-repeat center center/cover;
+            grid-area: item-5;
+        }
+        .item:nth-child(6){
+            background: url('./img/gal-6.jpeg') no-repeat center center/cover;
+            grid-area: item-6;
+        }
+        .item:nth-child(7){
+            background: url('./img/gal-7.jpeg') no-repeat center center/cover;
+            grid-area: item-7;
+        }
+        .item:nth-child(8){
+            background: url('./img/gal-8.jpeg') no-repeat center center/cover;
+            grid-area: item-8;
+        }
+        .item:nth-child(9){
+            background: url('./img/gal-9.jpeg') no-repeat center center/cover;
+            grid-area: item-9;
+        }
+        .item:nth-child(10){
+            background: url('./img/gal-10.jpeg') no-repeat center center/cover;
+            grid-area: item-10;
+        }
+        .item:nth-child(11){
+            background: url('./img/gal-11.jpeg') no-repeat center center/cover;
+            grid-area: item-11;
+        }
+        .item:nth-child(12){
+            background: url('./img/gal-12.jpeg') no-repeat center center/cover;
+            grid-area: item-12;
+        }
+        .item:nth-child(13){
+            background: url('./img/gal-13.jpeg') no-repeat center center/cover;
+            grid-area: item-13;
+        }
+        .item:nth-child(14){
+            background: url('./img/gal-14.jpeg') no-repeat center center/cover;
+            grid-area: item-14;
+        }
+
+        @media (max-width:600px){
+            .container {
+                height: 200vh;
+                grid-template-areas: 
+                'item-1 item-2'
+                'item-3 item-4'
+                'item-5 item-6'
+                'item-7 item-8'
+                'item-9 item-10'
+                'item-11 item-12'
+                'item-13 item-14'
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item item-1"></div>
+        <div class="item item-2"></div>
+        <div class="item item-3"></div>
+        <div class="item item-4"></div>
+        <div class="item item-5"></div>
+        <div class="item item-6"></div>
+        <div class="item item-7"></div>
+        <div class="item item-8"></div>
+        <div class="item item-9"></div>
+        <div class="item item-10"></div>
+        <div class="item item-11"></div>
+        <div class="item item-12"></div>
+        <div class="item item-13"></div>
+        <div class="item item-14">1</div>
+        <!-- <div class="item item-15">15</div> -->
+    </div>
+</body>
+</html>
