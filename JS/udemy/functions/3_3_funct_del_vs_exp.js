@@ -31,7 +31,7 @@ console.log(india);
 // thing, called 'percentageOfWorld2', and also call it with 3 
 // country populations (can be the same populations)
 
-const percentageOfWorld2 = function percentageOfWorld1(population){
+const percentageOfWorld2 = function(population){
     let worldPopulation = 7.9e9;
     return parseFloat((100 * population / worldPopulation).toFixed(1));
 }
