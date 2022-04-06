@@ -15,6 +15,7 @@ function welcome() {
     return welcome;
 }
 
+
 const welcome2 = () => 'Welcome to Appleseeds Bootcamp!';
 
 console.log("Result of ex-1");
