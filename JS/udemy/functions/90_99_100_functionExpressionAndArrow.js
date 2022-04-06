@@ -12,6 +12,8 @@ const square = function (num){
 const square2 = function Sqr (num){
     return num * num ;
 }
+
+
 // the Sqr function will not work 
 // console.log(Sqr(7));
 

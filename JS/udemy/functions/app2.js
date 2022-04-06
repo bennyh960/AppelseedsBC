@@ -1,1 +1,1 @@
-alert("hi");
+let age = prompt("what is your age?");
