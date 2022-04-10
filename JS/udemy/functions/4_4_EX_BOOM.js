@@ -1,13 +1,25 @@
 const isBoom = (num => {
-    for(let i = 0; i < num ; i++){
+    let oneLine = '1';
+    let lineLengh = 30;
+    for(let i = 2; i < num ; i++){
+        lineLengh--;
         if( i.toString().includes('7') && i % 7 === 0){
-            console.log('BOOM-BOOM');
+            // oneLine += " ,BOOM-BOOM";
+            oneLine = oneLine.concat(' ,BOOM-BOOM')
         } else if (i % 7 === 0) {
-            console.log('BOOM');
+            // oneLine += ",BOOM";
+            oneLine = oneLine.concat(' ,BOOM')
         } else{
-            console.log(i);
+            oneLine.concat(i,);
+            oneLine += " ," + i;
         }
-    }
-})(21);
+        if(lineLengh === 0 ){
+            oneLine += '\n';
+            lineLengh = 30;
+        }
 
-// console.log(isBoom);
+    }
+    console.log(oneLine);
+    return oneLine;
+})(78);
+
