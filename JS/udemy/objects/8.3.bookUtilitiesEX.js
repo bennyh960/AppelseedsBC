@@ -72,5 +72,25 @@ console.log(book1);
 // 7. add to to the bookUtils object a setPublisher function, that recieves a book 
 // a name and a location, and sets a new property named publisher, which is an 
 // object that contains the name and location.
+
+bookUtils.setPublisher = function(book, name, location){
+    book.publisher = {name,location};
+}
+
+console.log(bookUtils.setPublisher(book1,'Stimazky','Ashkelon'));
+console.log(bookUtils.setPublisher(book2,'Stimazky','Ashkelon'));
+console.log(book1);
+
+
 // 8. add to to the bookUtils object a function isSamePublisher, that recieves 2 
 // books and checks if the publisher name and location are identical in the 2 
+
+
+bookUtils.isSamePublisher = function(book_a, book_b){
+    return book_a.publisher.name === book_b.publisher.name && book_a.publisher.location === book_b.publisher.location  ;
+}
+
+console.log(bookUtils.isSamePublisher(book1,book2));
+
+book2.publisher.location = 'Ashdod';
+console.log(bookUtils.isSamePublisher(book1,book2));
