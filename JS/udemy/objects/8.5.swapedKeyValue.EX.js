@@ -17,3 +17,6 @@ function swapKV(obj){
 myobj = swapKV(myobj)
 console.log(myobj);
 
+
+console.log(Object.keys(myobj));
+
