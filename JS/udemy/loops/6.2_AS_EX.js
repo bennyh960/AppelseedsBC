@@ -28,6 +28,7 @@ for(let i  = 0 ; i < people.length ; i++){
 }
     
 
+
 // 7. Write the command to make a copy of the array using slice. The copy should NOT include "Mary" or "Matt"
 people2 = people.slice(2);
 console.log(people2);
@@ -51,3 +52,10 @@ console.log(people)
 let withBob = ['Bob'];
 withBob = withBob.concat(people);
 console.log(withBob);
+
+
+
+let group = ['benny', 'dan']
+
+console.log(group.indexOf((()=>'benny')()))
+console.log()

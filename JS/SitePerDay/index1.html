@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/35d411cefd.js" crossorigin="anonymous"></script>
+
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-hum{
+            width: 20px;
+            height: 20px;
+            border-top: solid gray 2px ;
+            border-bottom: solid gray 2px ;
+            /* border: 1px solid red; */
+            position: relative;
+            top: 5px;
+            margin: 10px;
+        }
+        
+        .nav-hum::after{
+            content: "";
+            border-bottom: solid gray 2px ;
+            width: 100%;
+            position: absolute;
+            top: 8px;
+            left: 5;
+            
+
+        }
+
+        .header-container {
+            display: flex;
+            width: 95vw;
+            height: 10vh;
+            margin: 10px auto;
+            justify-content: space-between;
+            font-size: 1.2rem;
+            border-bottom: red 4px solid;
+        }
+
+        .strong{
+            font-weight: bolder;
+        }
+
+        .main-container{
+            display: flex;
+            width: 95vw;
+            height: 70vh;
+            margin: 10px auto;
+            border-bottom: 2px rgb(163, 163, 163) solid;
+            
+        }
+
+        .left-main{
+            width: 45%;
+            margin: auto;
+            line-height: 2rem;
+            
+        }
+        
+        .right-main{
+            background-color: gray;
+            border-radius: 5px;
+            margin: auto;
+            width: 45%;
+            height: 45%;
+        }
+
+        .btn{
+            margin: 10px 0;
+            padding: 5px 10px;
+            border: red 2px solid;
+            width: fit-content;
+        }
+        
+        .main-2{
+            width: 95%;
+            margin: auto;
+        }
+
+        .main-2 h2 {
+            margin-top: 30px;
+            border-bottom: 2px solid red;
+            width: fit-content;
+            /* margin-bottom: 0; */
+        }
+
+        .grid-container{
+            display: grid;
+            width: 95%;
+            height: 400px;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 5px;
+            border-bottom: 2px rgb(163, 163, 163) solid;
+        }
+
+        .box {
+            /* width: 45%; */
+            /* height: 45%; */
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        .inner-1{
+            margin-top: 20px;
+            width: 80px;
+            height: 80px;
+            border: 1px solid red;
+            transform: rotate(45deg);
+            
+        }
+
+        .inner-2{
+            width: 45%;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="">
+            <div class="nav-hum"></div>
+        </a>
+    </nav>
+    <header>
+        <div class="header-container">
+            <div class="left-side">
+                <span class="strong">Editorial</span> By HTML 5
+                
+            </div>
+            <div class="right-side">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instegram"></i>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="main-container">
+            <div class="left-main">
+                <h1>Lorem ipsum dolor sit.</h1>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia, saepe?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur expedita quam quae quos reiciendis ullam rem hic, excepturi, fugit repellat error suscipit enim quas rerum magni porro voluptates voluptatem tempora!</p>
+                <div class="btn">Learn Mores</div>
+            </div>
+
+            <div class="right-main">
+            </div>
+        </div>
+    </main>
+
+    <div class="main-2">
+        <h2>lslkj lksalkj</h2>
+
+        <div class="grid-container">
+            <div class="box">
+                <div class="inner-1"></div>
+                <div class="inner-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni quo laborum, pariatur quia rerum excepturi laboriosam ex voluptates porro recusandae.</div>
+            </div>
+            <div class="box">
+                <div class="inner-1"></div>
+                <div class="inner-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, a optio aliquam velit soluta assumenda impedit voluptates nemo mollitia delectus.</div>
+            </div>
+            <div class="box">
+                <div class="inner-1"></div>
+                <div class="inner-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde ea iste incidunt repellendus quae vero accusantium sequi voluptatem, et esse?</div>
+            </div>
+            <div class="box">
+                <div class="inner-1"></div>
+                <div class="inner-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta dolores quia sint corrupti? Ab repellendus odit doloremque ea odio repellat?</div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
