@@ -10,7 +10,9 @@ function swapKV(obj){
     for(let k in obj){
         tempObj[obj[k]] = k;
     }
-    // console.log(obj);  
+
+    // obj = tempObj >>>>>>>>>>> NOT WORKING
+    // obj.someValue = tempObj.somevalue >>> will work 
     return tempObj;
 }
 
