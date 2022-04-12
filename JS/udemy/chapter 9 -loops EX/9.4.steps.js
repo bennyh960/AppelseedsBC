@@ -9,23 +9,19 @@ const steps = N => {
 }
 
 // steps(5);
-
 const steps2 = N => {
     let symbole = '#';
+    let arr = [];
 
-    let outerArr = [];
-    let innerArr = [];
-
-    for(let i = 0 ; i < N  ; i++){
-        innerArr = [];
-        for(let j = 0 ; j <= i ; j++){
-            innerArr.push(symbole);
-            for(let k = N ; k > 0 ; k--){
-                innerArr.push(' ');
-            }
-        }
-        outerArr.push(innerArr)
-        console.log(outerArr[i].join(" "));
+    for(let i = 0 ; i < N ; i++){
+        arr.push(' ');
+    }
+    for(let i = 0 ; i < N ; i++){
+        arr.unshift(symbole);
+        arr.pop();
+        console.log(arr.join(''));
     }
 }
-steps2(3);
+steps2(5);
+
+
