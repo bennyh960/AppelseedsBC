@@ -1,26 +1,24 @@
 
-const myobj = {};
 
 const array = ["Hello", "Good Day", "Your Welcome", "hotdog", "hamburgers"];
 
-// obj[h] = ['h', 'ellogood dayyour welcomeh', 'otdogh', 'amburgers']
 
 
-function setObjfromArray(arr,obj){
+function setObjfromArray(arr){
     let longWord = arr.join("").toLowerCase();
-    // console.log(longWord);
 
+    let letterObj = {}
     for(letter of longWord){
-        if(!letter.includes(" ") && (obj[letter] == undefined)){
-            // console.log(letter , (obj[letter]));
-            obj[letter] = longWord.split(letter).length - 1; 
+        if(!letter.includes(" ") && (letterObj[letter] == undefined)){
+            letterObj[letter] = longWord.split(letter).length - 1; 
         }
     }
 
-    let maxValue = Math.max(...Object.values(obj));
-    let maxKey  = Object.keys(obj).find(key => obj[key] === maxValue);
+    console.log(letterObj);
+    let maxValue = Math.max(...Object.values(letterObj));
+    let maxKey  = Object.keys(letterObj).find(key => letterObj[key] === maxValue);
     return `letter "${maxKey}" is with the most occurrences of ${maxValue} times. `
 }
 
-console.log(setObjfromArray(array,myobj));
-console.log(myobj);
+console.log(setObjfromArray(array));
+
