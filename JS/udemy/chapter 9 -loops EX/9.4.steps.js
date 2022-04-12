@@ -1,4 +1,3 @@
-
 const steps = N => {
     let symbole = '#';
     let arr = [];
@@ -11,24 +10,22 @@ const steps = N => {
 
 // steps(5);
 
-// const steps2 = N => {
-//     let symbole;
-//     let space = [];
-//     let arr = [];
-//     for(let i = N - 1 ; i > 0 ; i--){
-//         space.push(" ");
-//     }
-//     console.log(space);
-//     for(let i = 0 ; i < N ; i++){
-//         symbole = 'x' + space.join("");
-//         arr.push(symbole);
-//         space.pop();
-//     }
+const steps2 = N => {
+    let symbole = '#';
 
-//     for(let k = 1 ; k < arr.length ; k++){
-//         console.log(arr);
-//     }
+    let outerArr = [];
+    let innerArr = [];
 
-// }
-
-// steps2(5);
+    for(let i = 0 ; i < N  ; i++){
+        innerArr = [];
+        for(let j = 0 ; j <= i ; j++){
+            innerArr.push(symbole);
+            for(let k = N ; k > 0 ; k--){
+                innerArr.push(' ');
+            }
+        }
+        outerArr.push(innerArr)
+        console.log(outerArr[i].join(" "));
+    }
+}
+steps2(3);

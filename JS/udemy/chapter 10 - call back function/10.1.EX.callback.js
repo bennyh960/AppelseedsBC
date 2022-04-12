@@ -40,3 +40,18 @@ myCall = str => {
     return arr.reverse().join(' ');
 }
 console.log(firstWordUpperCase("Sara sings happy song",myCall));
+
+
+space('Task - 4')
+const myFunc = (str,myaction) => {
+    str = str[0].toUpperCase() + str.slice(1) ;
+    // console.log(str);
+    return myaction(str);
+}
+action = str => {
+    let last = str[str.length - 1].toUpperCase();
+    return str = str.slice(0,-1) + last ; 
+}
+
+console.log(myFunc('benny',action));
+
