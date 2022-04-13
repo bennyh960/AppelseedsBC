@@ -52,6 +52,18 @@ console.log(bookMarks);
 
 // TODO . Create another function that will do the same thing expect now use the map method.
 console.log('===================== Task - 2 ====================================');
+const mapBookmarks = newReleases.map(function(video){
+    return {
+        id : video.id,
+        name : video.title
+    }
+})
+
+console.log(mapBookmarks);
+
+
+
+
 // ! ask mordi
 // const mapBookmarks = newReleases.map(function(video){
 //     if(video.bookmark !== undefined ){
@@ -61,12 +73,4 @@ console.log('===================== Task - 2 ====================================
 
 // console.log(mapBookmarks);
 
-const mapBookmarks = newReleases.map(function(video){
-    return {
-        id : video.id,
-        name : video.title
-    }
-})
-
-console.log(mapBookmarks);
 

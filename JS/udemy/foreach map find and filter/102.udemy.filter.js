@@ -35,9 +35,16 @@ const books = [
 
 const goodBooks = books.filter(r => r.rating > 4);
 console.log(goodBooks);
+
+
+
 console.log('======================= EXAMPLE 2 ===============');
 const actionBook = books.filter(b => b.geners.includes("action"));
 console.log(actionBook);
+
+
+
+
 console.log('======================= EXAMPLE 3  ===============');
 const actionOrcomedy = books.filter(b =>
    ( b.geners.includes("action") ||  b.geners.includes("comedy")  )
