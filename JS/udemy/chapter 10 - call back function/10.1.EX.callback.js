@@ -1,13 +1,14 @@
 (space = (str) => {console.log(`=======================   ${str}   =====================`)})('line-1');
 // 1
 function isString(str,callback){
-    if (typeof(str)== 'string'){
+    if (typeof str === 'string'){
         return callback(str)
     }
 }
 
 const callback = str => console.log(str);
 
+// isString("Yea i'm a string",console.log) also work
 isString("Yea i'm a string",callback)
 isString(5,callback)
 
@@ -20,12 +21,11 @@ space('Task-2');
 firstWordUpperCase = (str,call) => {
     let newStrArr = str.split(" ");
     newStrArr[0] = newStrArr[0].toUpperCase();
-
     return call(newStrArr.join(' '));
 }
 
 call = str => {
-    return str.replaceAll(" ", "#");
+    return str.replaceAll(" ", "-");
 }
 
 console.log(firstWordUpperCase("Sara sings happy song",call));
