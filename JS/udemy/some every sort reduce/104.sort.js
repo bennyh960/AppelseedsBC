@@ -21,6 +21,6 @@ console.log(sort1); //?[ 12, 35.99, 99.99, 400.5, 3000, 9500 ]
 console.log(prices); //?[ 12, 35.99, 99.99, 400.5, 3000, 9500 ]
 
 const sort2 = prices.sort((a, b) => b - a);
-console.log(sort2);
-console.log(sort1); //?[ 12, 35.99, 99.99, 400.5, 3000, 9500 ]
-console.log(prices); //?[ 12, 35.99, 99.99, 400.5, 3000, 9500 ]
+console.log(sort2); //?[ 9500, 3000, 400.5, 99.99, 35.99, 12 ]
+console.log(sort1); //?[ 9500, 3000, 400.5, 99.99, 35.99, 12 ]
+console.log(prices); //?[ 9500, 3000, 400.5, 99.99, 35.99, 12 ]
