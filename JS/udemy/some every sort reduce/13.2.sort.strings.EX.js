@@ -66,3 +66,26 @@ console.log(ascTodscUpper);
 // c.1. Sort the array of strings from the longest word to the shortest word only using the sort function
 const words = ["apple", "supercalifragilisticexpialidocious", "hi", "zoo"];
 console.log([...words].sort((a, b) => a.length - b.length));
+
+
+// mordi lesson
+const students = [
+    { name: 'Samer', attendance: false },
+    { name: 'Keter', attendance: true },
+    { name: 'Binjamin', attendance: false },
+    { name: 'Eden', attendance: false },
+    { name: 'Amir', attendance: true },
+    { name: 'Haim', attendance: true },
+  ];
+  ​
+  students.sort((a, b) => {
+    //   console.log(a);
+    if (a.attendance && !b.attendance) {
+      return -1;
+    } else if (a.attendance === b.attendance) {
+      if (a.name < b.name) {
+        return -1;
+      }
+    }
+  });
+  console.log(students);
