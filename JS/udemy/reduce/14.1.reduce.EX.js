@@ -27,3 +27,8 @@ const average =
     return sum + val;
   }) / arr.length;
 console.log(average);
+
+const average2 = arr.reduce((avg, val, i, arr) => {
+  return avg + val / arr.length;
+}, 0);
+console.log(average2);
