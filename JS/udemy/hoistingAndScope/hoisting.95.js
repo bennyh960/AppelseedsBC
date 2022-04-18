@@ -52,9 +52,9 @@ var obj = {
   },
 };
 
-console.log(obj.prop.getFullname()); //Aurelio De Rosa
+// console.log(obj.prop.getFullname()); //Aurelio De Rosa
 
-this.fullname = "ofir"; //TODO ask about it
+// this.fullname = "ofir"; //! node does not access to global variable
 
 var test = obj.prop.getFullname;
 var gil = function () {
@@ -62,7 +62,7 @@ var gil = function () {
   return this.fullname;
 };
 
-console.log(gil());
+// console.log(gil());
 // console.log(test); // [Function: getFullname]
 // console.log(test()); // undefined
 
@@ -81,17 +81,47 @@ function funcB() {
   a++;
   return a;
 }
-funcB();
-console.log(typeof a);
-console.log(typeof b);
-console.log(typeof c);
+// funcB();
+// console.log(typeof a);
+// console.log(typeof b);
+// console.log(typeof c);
 // console.log(a, b);
 // =====================================================================================
-var abc = 1;
-function b() {
-  abc = 10;
-  return;
-  function a() {}
+// var abc = 1;
+// function b() {
+//   abc = 10;
+//   return;
+//   function a() {}
+// }
+// b();
+// console.log(abc);
+
+// ========================================
+function funcC() {
+  console.log("1");
 }
-b();
-console.log(abc);
+funcC(); //2
+function funcC() {
+  console.log("2");
+}
+funcC(); //2
+
+//===========================================
+function funcD1() {
+  d = 1; //global
+}
+funcD1();
+console.log(d); // 1
+function funcD2() {
+  var e = 1;
+}
+funcD2();
+// console.log(e); //error
+//==============================================
+
+function funcE() {
+  console.log("Value of f in local scope: ", f);
+}
+console.log("Value of f in global scope: ", f); //undefined
+var f = 1;
+funcE(); // f = 1 when this function invoked
