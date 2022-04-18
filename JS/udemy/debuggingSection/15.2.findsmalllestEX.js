@@ -29,5 +29,5 @@ function findSmallest(a, b, c) {
     return b;
   }
 }
-findSmallest(52, 66, 2);
+findSmalest(52, 66, 2);
 // console.log(findSmallest(52, 66, 2));
