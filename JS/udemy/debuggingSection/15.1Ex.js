@@ -12,7 +12,7 @@
 
 // What is wrong with this code?
 // 1. First find the line that contains the problem. Write it down.
-// ? line 20 fixed by adding "," , also line 9 changed from const to let
+// ? line 11 fixed by adding "," , also line 9 changed from const to let
 // 2. Which debug method did you use to find the bug?
 // ? i used vscode debuger
 // 3. Explain the bug in your own words.
