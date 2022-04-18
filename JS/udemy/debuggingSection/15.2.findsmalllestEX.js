@@ -29,5 +29,18 @@ function findSmallest(a, b, c) {
     return b;
   }
 }
-findSmalest(52, 66, 2);
+// findSmalest(52, 66, 2);
 // console.log(findSmallest(52, 66, 2));
+
+// closure example
+var addTo = function (passed) {
+  var add = function (inner) {
+    return passed + inner;
+  };
+
+  return add;
+};
+
+const addThree = addTo(3);
+console.dir(addThree);
+console.log(10);

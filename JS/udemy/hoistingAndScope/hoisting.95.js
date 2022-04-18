@@ -1,3 +1,5 @@
+(space = (str) => console.log(`====================== ${str}=========================`))("line 1");
+
 // ex -1
 function test() {
   console.log(a);
@@ -9,7 +11,8 @@ function test() {
   }
 }
 
-// test();
+test();
+space("ex 2");
 // =============================================================================
 // ansewere :
 // undefind for a (var is hoist variable)
@@ -32,14 +35,15 @@ function someFunction(number) {
 }
 
 // var firstResult = someFunction(9)(2); //argument for outer func
-// var firstResult = someFunction(9) = otherFunction(2)
+var firstResult = someFunction(9); // = otherFunction(2)
+console.log(firstResult);
+console.log(firstResult());
+var result = firstResult(2); // argument for inner
 // console.log(firstResult);
-// console.log(firstResult());
-// var result = firstResult(2); // argument for inner
-// console.log(firstResult);
-// console.log(result); // 90
+console.log(result); // 90
 // =============================================================================
 
+space("Ex-3");
 // Ex-3
 var fullname = "John Doe";
 var obj = {
@@ -52,51 +56,55 @@ var obj = {
   },
 };
 
-// console.log(obj.prop.getFullname()); //Aurelio De Rosa
+console.log(obj.prop.getFullname()); //Aurelio De Rosa
 
 // this.fullname = "ofir"; //! node does not access to global variable
 
-var test = obj.prop.getFullname;
+var test = obj.prop.getFullname; // same as copy the function
 var gil = function () {
   //same as test
-  return this.fullname;
+  return this.fullname; //this refear to window
 };
 
 // console.log(gil());
-// console.log(test); // [Function: getFullname]
-// console.log(test()); // undefined
+console.log(test); // [Function: getFullname]
+console.log(test()); // undefined due to node not support in window as global (this refear to window)
+// but it should print "jhon doe"
 
 // var test2 = obj.prop.getFullname();
 // console.log(test2); //Aurelio De Rosa
 
 // =====================================================================================
-
+space("Ex-4");
 // Ex - 4
 
 function funcB() {
-  //   let a = (b = 0);
-  let a = 0;
-  let b = 0;
+  // prettier-ignore
+  let ab = b = 0; // b is global , a equal to 0 in the funcB scope
+  // let a = 0;
+  // let b = 0;
   c = 5;
-  a++;
-  return a;
+  ab++;
+  return ab;
 }
-// funcB();
-// console.log(typeof a);
-// console.log(typeof b);
-// console.log(typeof c);
-// console.log(a, b);
+funcB();
+console.log(typeof ab); // undefind cause a is defined in funcB scope
+console.log(typeof b); // b is global that defined by func b so it will print number if funcB will invoked
+console.log(typeof c); //number as b
+// console.log(ab, b); // error due to ab is not defined in global scope
 // =====================================================================================
-// var abc = 1;
-// function b() {
-//   abc = 10;
-//   return;
-//   function a() {}
-// }
-// b();
-// console.log(abc);
+space("EX-5");
+var abc = 1;
+function b2() {
+  abc = 10;
+  return;
+  function abc() {} //the function is hoisted and due to the func is the same name as the local variable abc the changes is on that variable and not on the global
+}
+b2();
+console.log(abc);
 
 // ========================================
+space("EX-6"); // function decleration is hoisted the later function with same name is overwrite on the previews one
 function funcC() {
   console.log("1");
 }
@@ -107,6 +115,7 @@ function funcC() {
 funcC(); //2
 
 //===========================================
+space("Ex- 6 ");
 function funcD1() {
   d = 1; //global
 }
@@ -118,7 +127,7 @@ function funcD2() {
 funcD2();
 // console.log(e); //error
 //==============================================
-
+space("Ex- 7");
 function funcE() {
   console.log("Value of f in local scope: ", f);
 }
