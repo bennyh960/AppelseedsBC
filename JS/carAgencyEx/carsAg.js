@@ -806,9 +806,6 @@ carMarket.setPropertyBrandToAllCars();
 //? @param {object} - carObject
 //? @return {}
 carMarket.setNewCarToAgency = function (strID, carObj) {
-  // const carToAdd = (carObj) => {
-  //     return carObj
-  //     }
   this.sellers.find((agency) => agency.agencyId === strID).cars.push(carObj);
 };
 
@@ -986,8 +983,9 @@ carMarket.sortAndFilterByYearOfProduction = function (fromYear, toYear, isAscend
   return arrayOfCarsByYear.sort((a, b) => b.year - a.year);
 };
 
+// ?PERFECT
 // console.log(carMarket.sortAndFilterByYearOfProduction(2000, 2018, true));
-console.log(carMarket.sortAndFilterByYearOfProduction(2000, 2010, false));
+// console.log(carMarket.sortAndFilterByYearOfProduction(2000, 2010, false));
 
 // !=====================================================================
 //* 3) sortAndFilterByPrice
@@ -998,6 +996,22 @@ console.log(carMarket.sortAndFilterByYearOfProduction(2000, 2010, false));
 //?   @param {boolean} - isAscendingOrder - true for ascending order, false for descending order
 //?   @return {object[]} - arrayOfModels - array of sorted cars
 
+carMarket.sortAndFilterByPrice = function (fromPrice, toPrice, isAscendingOrder) {
+  const carsList = [];
+  for (let seller of this.sellers) {
+    for (let car of seller.cars) {
+      for (let model of car.models) {
+        model.price >= fromPrice && model.price < toPrice && carsList.push(model);
+      }
+    }
+  }
+  // console.log(carsList);
+  return isAscendingOrder ? carsList.sort((a, b) => a.price - b.price) : carsList.sort((a, b) => b.price - a.price);
+};
+
+// console.log(carMarket.sortAndFilterByPrice(200000, 250000, true));
+// !====================================================================
+// todo
 //* 4 ) searchCar
 //?   @param {object[]} - arrOfCars - array of cars
 //?   @param {number} - fromYear - Will display vehicles starting this year
@@ -1005,6 +1019,19 @@ console.log(carMarket.sortAndFilterByYearOfProduction(2000, 2010, false));
 //?   @param {number} - fromPrice - Will display vehicles starting at this price
 //?   @param {number} - fromPrice - Will display vehicles up to this price
 //?   optional @param {string} - brand - Look only for cars of this brand
+
+carMarket.searchCar = function (fromYear, toYear, fromPrice, toPrice, brandStr) {
+  return this.sortAndFilterByYearOfProduction(fromYear, toYear, true)
+    .filter((brandOfCar) => brandOfCar.brand === brandStr)
+    .filter((checkPrice) => {
+      return checkPrice.price >= fromPrice && checkPrice.price < toPrice;
+    });
+};
+
+// console.log(carMarket.searchCar(2014, 2016, 185000, 280000, "bmw"));
+// console.log(carMarket.searchCar(2010, 2016, 185000, 280000, "bmw"));
+
+// !=============================================================
 
 //* 5 ) sellCar
 //?   Sell ​​a car to a specific customer
