@@ -1041,9 +1041,9 @@ carMarket.searchCar = function (fromYear, toYear, fromPrice, toPrice, brandStr) 
 //?   @return {object} - The object of the car purchased by the customer or an explanation message
 //*done     - 5a. Subtract the vehicle amount + 17% (tax) from the customer's cash.
 //*done    - 5b. Add the vehicle value to the car agency cash.
-// todo    - 5c. Change the car owner's id to the customer's id.
-// todo     - 5d. Remove the car from the array of the agency's car models.
-// todo     - 5e. Add the car to the client cars array.
+//*done    - 5c. Change the car owner's id to the customer's id.
+//*done     - 5d. Remove the car from the array of the agency's car models.
+//*done    - 5e. Add the car to the client cars array.
 // *
 // *done     Taxes Authority:
 // *done     - 5f. Pay 17 percent of the vehicle value to the tax authority. (add the amount to totalTaxesPaid)
@@ -1116,7 +1116,8 @@ carMarket.sellCar = function (agencyID, customerID, carModel) {
   return completionMassage;
 };
 
-console.log(carMarket.sellCar("Plyq5M5AZ", "2RprZ1dbL", "33"));
+// console.log(carMarket.sellCar("Plyq5M5AZ", "2RprZ1dbL", "33"));
+console.log(carMarket.sellCar("Plyq5M5AZ", "2RprZ1dbL", "3"));
 // console.log(carMarket.taxesAuthority);
 // console.log(carMarket.customers[1]);
 // console.log(carMarket.sellers[0].cars[0].models);
