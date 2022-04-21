@@ -849,7 +849,7 @@ carMarket.deleteCarFromAgency = function (agencyID, carID) {
   }
 };
 
-carMarket.deleteCarFromAgency("Plyq5M5AZ", "AZJZ4");
+// carMarket.deleteCarFromAgency("Plyq5M5AZ", "AZJZ4");
 // console.log(carMarket.sellers[0].cars[0]);
 
 // !====================================================================
@@ -893,7 +893,7 @@ carMarket.setAmountOfCarsToBuyToAllAgency = function () {
 };
 
 carMarket.setAmountOfCarsToBuyToAllAgency();
-// console.log(carMarket.sellers[1]);
+// console.log(carMarket.sellers[0]);
 // ! ========================================
 //todo setters
 //* setCarToCostumer
@@ -934,7 +934,7 @@ carMarket.deleteCarOfCostumer = function (strID, carID) {
   }
 };
 
-carMarket.deleteCarOfCostumer("BGzHhjnE8", "16da1");
+// carMarket.deleteCarOfCostumer("BGzHhjnE8", "16da1");
 // console.log(carMarket.customers[0]);
 
 // !===============================================
@@ -1039,17 +1039,84 @@ carMarket.searchCar = function (fromYear, toYear, fromPrice, toPrice, brandStr) 
 //?   @param {string} - customerId
 //?   @param {string} - carModel
 //?   @return {object} - The object of the car purchased by the customer or an explanation message
-// *     - 5a. Subtract the vehicle amount + 17% (tax) from the customer's cash.
-// *     - 5b. Add the vehicle value to the car agency cash.
-// *     - 5c. Change the car owner's id to the customer's id.
-// *     - 5d. Remove the car from the array of the agency's car models.
-// *     - 5e. Add the car to the client cars array.
+//*done     - 5a. Subtract the vehicle amount + 17% (tax) from the customer's cash.
+//*done    - 5b. Add the vehicle value to the car agency cash.
+// todo    - 5c. Change the car owner's id to the customer's id.
+// todo     - 5d. Remove the car from the array of the agency's car models.
+// todo     - 5e. Add the car to the client cars array.
 // *
-// *     Taxes Authority:
-// *     - 5f. Pay 17 percent of the vehicle value to the tax authority. (add the amount to totalTaxesPaid)
-// *     - 5g. Increase the number of transactions made in one (numberOfTransactions)
-// *     - 5h. Add the vehicle amount + tax to sumOfAllTransactions
-// !     - Check that there is the requested vehicle at the agency in not return 'The vehicle does not exist at the agency'
-// !     - Check that the customer has enough money to purchase the vehicle, if not return 'The customer does not have enough money'
+// *done     Taxes Authority:
+// *done     - 5f. Pay 17 percent of the vehicle value to the tax authority. (add the amount to totalTaxesPaid)
+// *done     - 5g. Increase the number of transactions made in one (numberOfTransactions)
+//*done     - 5h. Add the vehicle amount + tax to sumOfAllTransactions
+
+//! done     - Check that there is the requested vehicle at the agency in not return 'The vehicle does not exist at the agency'
+//! done     - Check that the customer has enough money to purchase the vehicle, if not return 'The customer does not have enough money'
 
 //!      - Try to divide the tasks into several functions and try to maintain a readable language.
+
+carMarket.sellCar = function (agencyID, customerID, carModel) {
+  /* getAllCarToBuyByAgencyId(agencyID) >> return all cars available as array of obj. Extract the specific car object, from that obj extract the price. if no valid car - return massage. */
+
+  const carObjSold = this.getAllCarToBuyByAgencyId(agencyID)
+    .find((car) => car.models.find((model) => model.name === carModel || []))
+    .models.find((model) => model.name === carModel);
+  // console.log(carObjSold);
+
+  if (carObjSold === undefined) {
+    //
+    const agencyName = this.sellers.find((ID) => ID.agencyId === agencyID).agencyName;
+    const invalidMsg = `${carModel} is not avilable in ${agencyName} agency.`;
+    return invalidMsg;
+  }
+  const carPrice = carObjSold.price;
+  // console.log(carPrice);
+
+  //! ------------------------------------------------
+  //* /*Money section*/
+
+  const customerCash = this.getCustomerCash(customerID); // >>> return cash
+  if (customerCash < carPrice) {
+    // console.log(customerCash, carPrice);
+    const invalidMsg = `Sorry , the price of ${carObjSold.brand} model ${carObjSold.name} is ${carPrice}$.\nYou can't buy this car with ${customerCash}$. `;
+    // console.log(invalidMsg);
+    return invalidMsg;
+  }
+
+  const taxOfthisTransaction = carPrice * 0.17;
+
+  //? decrement cash from customer
+  this.decrementOrIncrementCashOfCostumer(customerID, -(carPrice + taxOfthisTransaction));
+  // console.log(this.getCustomerCash(customerID));
+
+  //? increment cash to agency
+  this.decrementOrIncrementCashOfAgency(agencyID, carPrice);
+  // console.log(this.decrementOrIncrementCashOfAgency(agencyID, carPrice));
+
+  // taxesAuthority section
+  this.taxesAuthority.totalTaxesPaid += taxOfthisTransaction;
+  this.taxesAuthority.sumOfAllTransactions += carPrice * 1.17;
+  this.taxesAuthority.numberOfTransactions += 1;
+
+  // !----------------------------------------------------------
+  // Delete from agency
+  this.deleteCarFromAgency(agencyID, carObjSold.carNumber);
+  this.setAmountOfCarsToBuyToAllAgency();
+  // console.log(this.sellers[0], carObjSold.carNumber);
+
+  // Change owenership id
+  carObjSold.ownerId = customerID;
+  // console.log(carObjSold);
+
+  // Add car to customer
+  this.setCarToCostumer(customerID, carObjSold);
+
+  const completionMassage = `Congratulation, transaction completed.`;
+
+  return completionMassage;
+};
+
+console.log(carMarket.sellCar("Plyq5M5AZ", "2RprZ1dbL", "33"));
+// console.log(carMarket.taxesAuthority);
+// console.log(carMarket.customers[1]);
+// console.log(carMarket.sellers[0].cars[0].models);
