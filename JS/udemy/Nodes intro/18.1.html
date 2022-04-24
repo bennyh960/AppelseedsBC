@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" / >
+    <meta
+      name="viewport"
+      content="width=device-width,
+initial-scale=1.0"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Header</h1>
+    <p>Paragraph</p>
+    <a href="#">link</a>
+    <img src="" alt="" />
+    <div class="x">Div with a class</div>
+    <div id="y">Div with an id <b>i check also textcontect and inner html</b></div>
+    <input type="text" />
+    <input type="text" />
+    <input type="text" />
+  </body>
+  <script>
+    //Select all elements inside the body and store each element in a separate variable and print them to the console.
+    // 1. Select all elements not using the querySelector method
+
+    const h1 = document.getElementsByTagName("h1")[0];
+    console.log(h1);
+    console.log(h1.innerText);
+
+    const p = document.getElementsByTagName("p")[0];
+    console.log(p.innerText);
+
+    const image = document.getElementsByTagName("img")[0];
+    console.log(image);
+
+    const x = document.getElementsByClassName("x")[0];
+    console.log(x.innerText);
+
+    const y = document.getElementById("y");
+    console.log(y.innerText);
+    console.log(y.textContent);
+    console.log(y.innerHTML);
+
+    const input = document.getElementsByTagName("input");
+    console.log(input);
+    // console.log(input[0].value);
+
+    // 2. Select all elements using querySelector method.
+
+    const h11 = document.querySelector("h1");
+    console.log(h11.innerText);
+
+    const p1 = document.querySelector("p");
+    console.log(p1.innerText);
+
+    const image1 = document.querySelector("img");
+    console.log(image1);
+
+    const inputAll = document.querySelectorAll("input");
+    // console.log((inputall[0].placeholder = 10));
+
+    // 3. Select all inputs and iterate over them with the forEach
+    // method and print each one to the console. Using both
+    // querySelectorAll and getElementsByTagName.
+
+    [...input].forEach((e) => {
+      console.log(e.checked);
+    });
+    [...inputAll].forEach((e) => {
+      console.log(e.checked);
+    });
+  </script>
+</html>
