@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      section {
+        text-align: center;
+      }
+
+      #code {
+        font-weight: bold;
+      }
+
+      section form {
+        display: flex;
+        justify-content: center;
+      }
+
+      section form input {
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+      }
+
+      button {
+        margin-top: 20px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding: 5px 10px;
+        color: white;
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Instructions</h1>
+    <p>Many times an application needs to verify the account by sending a verification code by text message.</p>
+    <p>Lets create a functionality the enables the user to paste the verification code to the input fields.</p>
+
+    <h2>Features</h2>
+    <ul>
+      <li>
+        The user is allowed to type the values manually. After each value is inserted, the next input will be focused.
+      </li>
+      <li>. The user is allowed to paste the verification code.</li>
+      <li>An extra challenge will be to auto submit the form once all inputs all populated.</li>
+    </ul>
+
+    <h2>Things to thing about:</h2>
+    <p>What happens if the user pastes only 3 digits and there are 6 inputs to fill out.</p>
+    <a href="https://www.youtube.com/watch?v=o_Z13-N4AE4&ab_channel=PinchasHodadad">Example</a>
+    <h3>Things to help you:</h3>
+    <p>Google “paste event” to understand how to listen to a paste event</p>
+    <p>Google “clipboardData” to find out how to get the value of a paste event.</p>
+
+    <section class="solution">
+      <h2>Text To Copy:</h2>
+      <p id="code">123456</p>
+      <form action="">
+        <input type="text" maxlength="1" onkeyup="getFocus('0')" />
+        <input type="text" maxlength="1" onkeyup="getFocus('1')" />
+        <input type="text" maxlength="1" onkeyup="getFocus('2')" />
+        <input type="text" maxlength="1" onkeyup="getFocus('3')" />
+        <input type="text" maxlength="1" onkeyup="getFocus('4')" />
+        <input type="text" maxlength="1" onkeyup="getFocus('5')" />
+      </form>
+      <button onclick="getFocus()">Verify</button>
+    </section>
+    <script src="./19.3.js"></script>
+  </body>
+</html>

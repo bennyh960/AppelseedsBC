@@ -9,7 +9,6 @@ anotherSubTitle.innerText = "sub title 4";
 
 const ul = document.querySelector("li ul");
 ul.append(anotherSubTitle);
-console.log(ul.lastChild.innerText);
 
 const parentOfparentUl = document.querySelector("body ul");
 // console.log(parentOfparentUl.lastElementChild.innerText);
@@ -22,3 +21,6 @@ title.innerText = "“Master Of The Dom";
 // Change the text of the <p> element ot something else of your
 const newP = document.querySelector("#changeme");
 newP.innerText = "Hello beutiful world!";
+
+// using traverse methode
+// const mylistsibling = title2.nextElementSibling;
