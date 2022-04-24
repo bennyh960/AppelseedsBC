@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" / >
+    <meta
+      name="viewport"
+      content="width=device-width,
+initial-scale=1.0"
+    />
+    <title>Modifying Elements</title>
+  </head>
+  <style>
+    h1 {
+      color: red;
+    }
+    p {
+      font-size: 20px;
+    }
+  </style>
+  <body>
+    <h1>I hate the color red. If only I was blue and I can sing "Im blue da da di da da daaa"</h1>
+    <p class="paragraph">I wish I was bigger</p>
+    <div id="description">Select me and change my display property if you dare!</div>
+  </body>
+
+  <script>
+    const h1 = document.getElementsByTagName("h1")[0];
+    h1.style.color = "blue";
+    // h1.style.color = "rgb(220,0,10)";
+    const p = document.querySelector("p");
+    p.style.fontsize = "30px";
+    // console.log(p.style);
+
+    const description = document.getElementById("description");
+    description.style.display = "inline-block";
+
+    const bodyBG = document.getElementsByTagName("body")[0];
+    // console.log(bodyBG);
+    bodyBG.style.background = "green";
+
+    const title = document.getElementsByTagName("title")[0];
+    title.innerText = "Ex completed";
+    // console.log(title.innerText);
+  </script>
+</html>
