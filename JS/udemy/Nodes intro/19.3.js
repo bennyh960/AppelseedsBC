@@ -6,7 +6,7 @@ function getFocus(idx) {
 
 document.addEventListener("paste", function (e) {
   // if the target is a text input
-  console.log(e);
+  //   console.log(e);
   if (e.target.type === "text") {
     var data = e.clipboardData.getData("Text");
     // split clipboard text into single characters
