@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" / >
+    <meta
+      name="viewport"
+      content="width=device-width,
+initial-scale=1.0"
+    />
+    <title>Modifying Elements</title>
+  </head>
+  <style>
+    h1 {
+      color: red;
+    }
+    p {
+      font-size: 20px;
+    }
+  </style>
+  <body>
+    <h1>I hate the color red. If only I was blue and I can sing "Im blue da da di da da daaa"</h1>
+    <p class="paragraph">I wish I was bigger</p>
+    <ul>
+      <li>first item</li>
+      <li>second item</li>
+      <li>third item</li>
+    </ul>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit hic molestiae libero iure blanditiis sequi natus?
+      Debitis assumenda accusamus delectus, temporibus pariatur beatae ipsam enim praesentium voluptatibus excepturi
+      deserunt illum?
+    </p>
+    <div id="description">Select me and change my display property if you dare!</div>
+
+    <section>
+      <ul>
+        <li>one child</li>
+        <li class="deleteMe">two child</li>
+        <li>three child</li>
+      </ul>
+    </section>
+  </body>
+
+  <script>
+    const p = document.querySelector(".paragraph");
+    p.style.fontSize = "30px";
+    p.style.color = "red";
+
+    const newh2 = document.createElement("h2");
+    newh2.innerText = "Woww i created an element by JS";
+    newh2.classList.add("paragraph");
+
+    const parent = document.querySelector("#description");
+    parent.appendChild(newh2);
+    console.log(newh2);
+
+    const image2 = document.createElement("img");
+    image2.src =
+      "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*";
+
+    // as last child of body
+    document.body.appendChild(image2);
+    image2.style.width = "350px ";
+    // console.log(p.style);
+
+    const forthLi = document.createElement("li");
+    forthLi.innerText = "i am forth list element";
+    const ulParent = document.querySelector("ul");
+    ulParent.appendChild(forthLi);
+
+    const firstLi = document.createElement("li");
+    firstLi.innerHTML = "<b>I am the first one and bold</b>";
+
+    const oldFirstLi = document.querySelector("li");
+    ulParent.insertBefore(firstLi, oldFirstLi);
+
+    // insert by index using queryselectall
+    const lyByidx = document.createElement("li");
+    lyByidx.innerText = "i inserted before idx 2 so i idx 1";
+
+    const listAll = document.querySelectorAll("li");
+    ulParent.insertBefore(lyByidx, listAll[2]);
+
+    // adjacentadd
+    const i = document.createElement("i");
+    i.innerText = "I am cool";
+    const P = document.querySelector("p");
+    // P.insertAdjacentElement("beforeend", i);
+    P.insertAdjacentElement("beforebegin", i);
+
+    // append
+    // parent.append(i, firstLi);
+
+    // prepend
+    // parent.prepend(i, firstLi);
+
+    // removechild
+    const ul2 = document.querySelector("section ul");
+    const removeMe = ul2.querySelector(".deleteMe");
+    // ul2.removeChild(removeMe); //also i can saver that to variable
+    const deleted = ul2.removeChild(removeMe);
+    console.log(deleted);
+
+    // remove without using parent
+    image2.remove();
+  </script>
+</html>

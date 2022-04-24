@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" / >
+    <meta
+      name="viewport"
+      content="width=device-width,
+initial-scale=1.0"
+    />
+    <title>Modifying Elements</title>
+  </head>
+  <style>
+    h1 {
+      color: red;
+    }
+    p {
+      font-size: 20px;
+    }
+  </style>
+  <body>
+    <h1>I hate the color red. If only I was blue and I can sing "Im blue da da di da da daaa"</h1>
+    <p class="paragraph">I wish I was bigger</p>
+    <div id="description">Select me and change my display property if you dare!</div>
+  </body>
+
+  <script>
+    const h1 = document.getElementsByTagName("h1")[0];
+    h1.style.color = "blue";
+    // h1.style.color = "rgb(220,0,10)";
+    const p = document.querySelector(".paragraph");
+    p.style.fontSize = "50px";
+    p.style.color = "red";
+
+    const newh2 = document.createElement("h2");
+    newh2.innerText = "Woww i created an element by JS";
+    newh2.classList.add("paragraph");
+    const x = document.querySelector("#description");
+    x.appendChild(newh2);
+    console.log(newh2);
+
+    const image2 = document.createElement("img");
+    image2.src =
+      "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*";
+
+    // x.appendChild(image2);
+
+    // as last child of body
+    document.body.appendChild(image2);
+    image2.style.width = "350px ";
+    // console.log(p.style);
+  </script>
+</html>
