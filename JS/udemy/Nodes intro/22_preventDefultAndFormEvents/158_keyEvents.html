@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <input type="text" id="username" placeholder="username" />
+    <h3>Shopping List</h3>
+    <input type="text" id="addItem" placeholder="Enter a food" />
+    <ul id="items"></ul>
+
+    <script>
+      const input = document.querySelector("#username");
+      input.addEventListener("keydown", function (e) {
+        console.log("key down!");
+      });
+      input.addEventListener("keyup", function (e) {
+        console.log("key up!");
+      });
+      input.addEventListener("keypress", function (e) {
+        console.log("key pressed! only typed keys trigger it like 'abc,,,z and numbers etc'");
+      });
+
+      const addItemInput = document.querySelector("#addItem");
+      const itemsUL = document.querySelector("#items");
+
+      addItemInput.addEventListener("keypress", function (e) {
+        // console.log(e);
+        if (e.key === "Enter") {
+          if (!this.value) return;
+          //add a new item to list
+          const li = document.createElement("li");
+          li.textContent = this.value;
+          itemsUL.appendChild(li);
+          this.value = "";
+        }
+      });
+    </script>
+  </body>
+</html>
