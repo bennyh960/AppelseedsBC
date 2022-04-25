@@ -1,3 +1,5 @@
+// This get focus function is old fashion. better way is in ./19.3.2.js
+
 function getFocus(idx) {
   const input = document.querySelectorAll("input")[idx];
   const current = input.nextElementSibling;
@@ -20,4 +22,4 @@ document.addEventListener("paste", function (e) {
 });
 
 const x = document.getElementsByTagName("input")[0];
-// console.log(x.type);
+// console.log(x.type)
