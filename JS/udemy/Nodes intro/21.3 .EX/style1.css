@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  width: 600px;
+  height: 500px;
+  background-color: beige;
+  margin: 30px auto;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  width: 90vw;
+  height: 500px;
+  background-color: #f3f3f3;
+  margin: 30px auto;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container > * {
+  margin: 10px;
+}
+
+.msg {
+  display: flex;
+}
+
+.msg label {
+  margin-right: 20px;
+}

@@ -1,17 +1,23 @@
-const plus = document.querySelector("#plus");
-const minus = document.querySelector("#minus");
-const text = document.querySelector(".text");
-// const input = document.querySelector("input");
+const text = document.querySelector("textarea");
+const btn = document.querySelector("button");
 
-let size = 16;
-plus.addEventListener("click", () => {
-  size < 100 && size++;
-  text.style.fontSize = `${size}px`;
-  // console.log(size);
+let content = "";
+// if (content.length < 99) {
+text.addEventListener("keyup", (e) => {
+  content = e.target.value;
+  const charLeft = document.querySelector("#charLeft");
+  charLeft.textContent = ` ${100 - content.length} characters left.`;
 });
-minus.addEventListener("click", () => {
-  size > 6 && size--;
-  // console.log(size);
-  text.style.fontSize = `${size}px`;
-  // console.log(text.style.fontSize);
+// }
+
+btn.addEventListener("click", () => {
+  if (content.length < 10) {
+    btn.textContent = ` ${100 - content.length} characters left.`;
+  } else {
+    btn.type = "submit";
+  }
+});
+
+btn.addEventListener("mouseover", () => {
+  btn.textContent = "submit";
 });
