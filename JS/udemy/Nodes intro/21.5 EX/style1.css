@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  width: 600px;
+  height: 500px;
+  background-color: beige;
+  margin: 30px auto;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  padding-top: 10px;
+}
+
+.container form > * {
+  margin: 10px 0;
+}
+
+/* label {
+  margin-top: 150px;
+  padding-top: 120px; 
+  font-size: 3rem;
+} */
