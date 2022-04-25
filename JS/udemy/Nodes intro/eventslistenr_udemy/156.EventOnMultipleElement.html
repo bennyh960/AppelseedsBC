@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 200px;
+        height: 200px;
+      }
+
+      #boxes {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      h1 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Pick a color</h1>
+    <section id="boxes"></section>
+
+    <script>
+      const colors = ["red", "orange", "yellow", "green", "blue", "purple", "indigo", "violet"];
+
+      const printColor = function (box) {
+        console.log(box.style.backgroundColor);
+      };
+
+      const printColor2 = function () {
+        // console.log(this);
+        console.log(this.style.backgroundColor);
+      };
+
+      // printColor2();//in this situation this is window but when the function passed to another object the this refer to that object "box"
+
+      const changeColor = function () {
+        const h1 = document.querySelector("h1");
+        h1.style.color = this.style.backgroundColor;
+      };
+
+      const container = document.querySelector("#boxes");
+
+      for (let color of colors) {
+        const box = document.createElement("div");
+        box.style.backgroundColor = color;
+        box.classList.toggle("box");
+        container.appendChild(box);
+        // the tutorial want show how to use from seapreted function
+        // box.addEventListener("click", () => {
+        //   console.log(box.style.backgroundColor);
+        // });
+        // 2nd methode - we cant add printColor(box) as argument due to the password will invoked rightway with undeifnd
+        // box.addEventListener("click", function () {
+        //   printColor(box);
+        // });
+        // 3nd methode with using this
+        box.addEventListener("click", printColor2);
+        box.addEventListener("click", changeColor);
+      }
+    </script>
+  </body>
+</html>

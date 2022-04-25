@@ -47,3 +47,9 @@ image2.src =
 image2.style.width = "500px";
 // as last child of body
 document.body.appendChild(image2);
+
+console.log(firstLink.style.color); // it will print the color due to the first link defined by js
+
+// const test = document.querySelector(".footer h2");
+// console.log(test.textContent);
+// console.log(test.style.color); // we cant get style data due to js and css not connected
