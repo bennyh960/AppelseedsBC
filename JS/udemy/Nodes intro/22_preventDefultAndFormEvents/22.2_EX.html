@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <label for="c">Click me</label>
+      <input type="checkbox" name="" id="c" />
+    </form>
+    <div></div>
+    <script>
+      const btn = document.querySelector("input");
+      const img = document.createElement("img");
+      img.src =
+        "https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlld3xlbnwwfHwwfHw%3D&w=1000&q=80";
+      const div = document.querySelector("div");
+
+      btn.addEventListener("input", () => {
+        if (btn.checked) div.appendChild(img);
+        else {
+          div.removeChild(img);
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+.contanier {
+  display: flex;
+  height: 80vh;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  /* background-color: red; */
+}
+
+.contanier > * {
+  margin: 20px;
+}
+.code {
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+button {
+  position: relative;
+  top: -55px;
+}
