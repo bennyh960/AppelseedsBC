@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+  </head>
+  <body>
+    <form action="" id="signup-form">
+      <input type="text" placeholder="credit card" id="cc" />
+      <label for="">
+        I agree to sell my soul to your company
+        <input type="checkbox" placeholder="credit card" id="terms" />
+      </label>
+      <select name="" id="veggie">
+        <option value="Eggplant">Eggplant</option>
+        <option value="Carrot">Carrot</option>
+        <option value="Tomato">Tomato</option>
+      </select>
+      <input type="submit" />
+    </form>
+
+    <script>
+      const creditCardInput = document.querySelector("#cc");
+      const termsCheckbox = document.querySelector("#terms");
+      const veggieSelect = document.querySelector("#veggie");
+
+      const form = document.querySelector("#signup-form");
+      form.addEventListener("submit", function (e) {
+        alert("submitted the form");
+        // to prevent the form to relaod the new url
+        e.preventDefault();
+        // console.log(e);
+        console.log("cc", creditCardInput.value);
+        console.log("terms", termsCheckbox.value, termsCheckbox.checked);
+        console.log("veggieSelect", veggieSelect.value);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>22.1 form</title>
+  </head>
+  <body>
+    <form action="">
+      <label for="">Enter your name</label><br />
+      <input id="name" name="name" type="text" /><br />
+      <label for="">Enter your age</label><br />
+      <input name="age" type="number" name="" id="" /><br />
+      <label for="">Enter your email</label><br />
+      <input name="mail" type="email" /><br />
+      <button type="button">Submit</button>
+    </form>
+
+    <script>
+      const data = document.querySelectorAll("input");
+      const btn = document.querySelector("button");
+
+      btn.addEventListener("click", function (e) {
+        let confirmMsg = "";
+        let text = "Your Data : \n";
+
+        for (let input of data) {
+          text += input.value;
+          text += "\n";
+        }
+
+        if (confirm(text)) {
+          confirmMsg = "Congratulations you successfully sent this form";
+        } else {
+          confirmMsg = "You pressed Cancel!";
+        }
+
+        const msg = document.createElement("p");
+        msg.innerText = confirmMsg;
+        btn.parentElement.appendChild(msg);
+      });
+    </script>
+  </body>
+</html>
