@@ -28,11 +28,21 @@ export function expandSnake(amount) {
   newSegments += amount;
 }
 
-export function onSnake(position) {
+export function onSnake(position, { ignoreHead = false } = {}) {
   //some return true if one element in body is true for condition
-  return snakeBody.some((segment) => {
+  return snakeBody.some((segment, index) => {
+    if (ignoreHead && index === 0) return false;
     return equalPositions(segment, position);
   });
+}
+
+// for checkDeath function in app.js
+export function getSnakeHead() {
+  return snakeBody[0];
+}
+
+export function snakeInterection() {
+  return onSnake(snakeBody[0], { ignoreHead: true });
 }
 
 function equalPositions(pos1, pos2) {
