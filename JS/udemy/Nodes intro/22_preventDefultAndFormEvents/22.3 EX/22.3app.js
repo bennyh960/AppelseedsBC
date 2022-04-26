@@ -1,5 +1,5 @@
 const alphabeta = "abcdefghijklmnopqrstuvwxyz";
-const randomCharacter = alphabeta[Math.floor(Math.random() * alphabeta.length)];
+let randomCharacter = alphabeta[Math.floor(Math.random() * alphabeta.length)];
 // const randomCharacter = "a";
 
 const codedLayout = document.querySelector(".code");
@@ -23,8 +23,6 @@ window.addEventListener("keypress", ({ key }) => {
   if (!isGuessed) {
     if (guessedList.includes(key)) {
       noteUser = `${key} already been guesed!`;
-      // msg.textContent = noteUser;
-      // msg.style.color = "red";
       msgUser(msg, noteUser, "red");
     } else if (key === randomCharacter) {
       noteUser = "Right letter!";
@@ -35,7 +33,6 @@ window.addEventListener("keypress", ({ key }) => {
       msg.nextElementSibling.style.fontSize = "18px";
       presentedList.textContent = "";
       yesBtn.style.display = "block";
-      // todo ask user if he want play again and create button. if click = true change isGuessed = false
     } else if (!alphabeta.includes(key.toLowerCase())) {
       noteUser = "Please enter a valid letter.";
       msgUser(msg, noteUser, "red");
@@ -50,10 +47,12 @@ window.addEventListener("keypress", ({ key }) => {
 
 yesBtn.addEventListener("click", () => {
   isGuessed = false;
-  console.log(isGuessed);
   guessedList = [];
   yesBtn.style.display = "none";
-  noteUser = "Guess a letter";
   msg.nextElementSibling.textContent = "key Guessed";
   msg.nextElementSibling.style.fontSize = "22px";
+  randomCharacter = alphabeta[Math.floor(Math.random() * alphabeta.length)];
+  codedLayout.textContent = "?";
+  noteUser = "Guess a letter";
+  msgUser(msg, noteUser, "black");
 });
