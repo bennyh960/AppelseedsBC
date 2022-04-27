@@ -14,6 +14,7 @@ export function update() {
   snakeBody[0].y += inputDirection.y;
 }
 
+// actual create div element add "style" to that div by adding it to snake class
 export function draw(gameBoard) {
   snakeBody.forEach((segment) => {
     const snakeElement = document.createElement("div");
@@ -24,6 +25,7 @@ export function draw(gameBoard) {
   });
 }
 
+//will set the amount of expand of each eating - amount define in food.js file
 export function expandSnake(amount) {
   newSegments += amount;
 }
@@ -49,9 +51,11 @@ function equalPositions(pos1, pos2) {
   return pos1.x === pos2.x && pos1.y === pos2.y;
 }
 
+// adding the actual "coords obj" of last element to snakebody array
 function addSegments() {
   for (let i = 0; i < newSegments; i++) {
     snakeBody.push({ ...snakeBody[snakeBody.length - 1] });
+    // snakeBody.push(snakeBody[snakeBody.length - 1]); // my methode work the same
   }
   newSegments = 0;
 }

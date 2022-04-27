@@ -23,7 +23,7 @@ const annoyer = {
     }, 3000);
   },
   stop() {
-    // clearInterval(this.start()); //dont work
+    // clearInterval(this.start()); //dont work cause we need to enter the interval func
     clearInterval(this.timerId);
     console.log("PHEW THANK HEAVENS THAT IS OVER!");
   },

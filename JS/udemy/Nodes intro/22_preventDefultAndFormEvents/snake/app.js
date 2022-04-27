@@ -8,7 +8,6 @@ let gameOver = false;
 
 function main(currentTime) {
   if (gameOver) {
-    // return alert("You Loose!");
     if (confirm("You loose. Press ok to restart.")) {
       window.location = "./";
     }

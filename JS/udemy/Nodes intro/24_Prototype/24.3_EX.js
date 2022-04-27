@@ -91,3 +91,8 @@ console.log(sumMyArr);
 console.log(sumMyArrWithInitial);
 console.log(multyMyArr);
 console.log(multyMyArrWithInitail);
+
+// Arr.prototype.newReduce = function(callBack,initial){
+
+//   for(let i = 0 ; i < this.arr.length ;i++)
+// }
