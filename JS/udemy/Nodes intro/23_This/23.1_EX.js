@@ -49,13 +49,25 @@ console.log("================= Question 5 ===========================");
 
 // b. How can you fix this code.
 // ? first add an event
-// ? if we want to refer to element we need to change the callback func to normal function , now the "addeventlistner" is belong to "element" "obj" which is call to this . then this refer to "element"
-const x = document.querySelector(".element");
+// ? if we want to refer to element we need to change the callback func to regular function , now the "addeventlistner" belongs to "element" "obj" which is call to this . then this refer to "element"
+// const x = document.querySelector(".element");
 
-document.querySelector(".element").addEventListener("click", () => {
-  console.log(this);
-});
+// x.addEventListener("click", () => {
+//   console.log(this);
+// });
 
-document.querySelector(".element").addEventListener("click", function () {
-  console.log("not arrow function:", this);
-});
+// x.addEventListener("click", function () {
+//   console.log("not arrow function:", this);
+// });
+
+// function func() {
+//   //   console.log(1, this);
+//   const x = function () {
+//     return (() => {
+//       console.log(this);
+//     })();
+//   };
+//   return x;
+// }
+
+// func()();
