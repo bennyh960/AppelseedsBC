@@ -1,23 +1,21 @@
-const btn = document.querySelector("#btn");
-const div = document.querySelector("#joke");
-const title = document.querySelector("h2");
-const url = "https://api.jokes.one/jod";
+//fetch methode take one mandatory arg , the path . it return a promise that resolve the response to that request
+// fetch("https://swapi.dev/api/planets").then((response) => console.log(response));
 
-btn.addEventListener("click", () => {
-  fetch(url, { headers: { Accept: "application/json" } })
-    .then((res) => {
-      // console.log(res.json());
-      if (res.status !== 200) {
-        console.log("problem:", res.status);
-        return;
-      }
+// fetch("https://swapi.dev/api/planets").then((res) => console.log(res));
+// fetch("https://swapi.dev/api/planets").then((res) => console.log(res.json()));
+
+fetch("https://swapi.dev/api/planets")
+  .then((res) => {
+    if (!res.ok) console.log("ERROR");
+    else {
       res.json().then((data) => {
-        //   console.log(data);
-        title.textContent = data.contents.jokes[0].joke.title;
-        div.textContent = data.contents.jokes[0].joke.text;
+        for (let planet of data.results) {
+          console.log(planet.name);
+        }
       });
-    })
-    .catch(function (err) {
-      console.log("Fetch Error: ", err);
-    });
-});
+    }
+  })
+  .catch((err) => {
+    console.log("Somthing went wrong with fetch");
+    console.log(err);
+  });
