@@ -28,9 +28,14 @@ const sortWords = (arr) => {
 
 const arr1 = ["lion", "cat", "zebra", "bear"];
 const arr2 = ["lion", 8, "zebra", "bear"];
-makeAllCaps(arr2)
-  .then((data) => console.log(data))
-  .then(sortWords(arr1))
+makeAllCaps(arr1)
+  .then((data) => {
+    console.log(data);
+    return sortWords(data);
+  })
+  .then((data2) => {
+    console.log(data2);
+  })
   .catch((err) => {
     console.log(err);
   });
