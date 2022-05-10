@@ -4,6 +4,45 @@
   padding: 0;
 }
 
-html {
+/* html {
   font-size: 10px;
+} */
+
+form > * {
+  width: fit-content;
+  margin: 0.5rem 0rem;
+}
+
+.all-profiles {
+  display: flex;
+  flex-wrap: wrap;
+  width: fit-content;
+  /* background-color: red; */
+}
+
+.container {
+  /* border: black solid 1px; */
+}
+
+.container > * {
+  margin: 0.5rem;
+  width: 13rem;
+}
+
+.container .userImg {
+  height: 13rem;
+}
+
+.container .userName {
+  height: fit-content;
+  background: rgb(227, 220, 220);
+}
+.container .userNumOfRepo {
+  height: fit-content;
+  background: rgb(227, 220, 220);
+}
+
+.already {
+  border: 3px solid red;
+  transition: 2s ease;
 }
