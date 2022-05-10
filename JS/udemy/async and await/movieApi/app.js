@@ -21,11 +21,7 @@ const elements = {
   rating: document.querySelector(".rating"),
 };
 
-//user search for movie
-document.querySelector("button").addEventListener("click", async () => {
-  const { userInput, poster, title, genere, year, plot, director, actors, rating } = elements;
-  const movie = await getMovie(userInput.value);
-  //   getMovie(userInput.value).catch((e) => console.log(e));
+function setElementInDocument(movie, poster, title, genere, year, plot, director, actors, rating) {
   poster.style.background = `url("${movie.Poster}") no-repeat center center/contain`;
   title.innerHTML = `<h2>${movie.Title}</h2>`;
   genere.innerHTML = "<b>Genere:</b> " + movie.Genre;
@@ -38,4 +34,17 @@ document.querySelector("button").addEventListener("click", async () => {
     strRating += "<b>" + site.Source + ":</b> " + site.Value + "</br>";
   });
   rating.innerHTML = "<b>Rating:</b><br> " + strRating;
+}
+
+//user search for movie
+document.querySelector("button").addEventListener("click", async () => {
+  const { userInput, poster, title, genere, year, plot, director, actors, rating } = elements;
+  const movie = await getMovie(userInput.value)
+    .then((val) => setElementInDocument(val, poster, title, genere, year, plot, director, actors, rating))
+    .catch((e) => {
+      //   document.querySelector(".container").innerHTML = e;
+      //   document.getElementById("searchBar").ariaPlaceholder = "xx";
+      console.log("Error: ", e);
+    });
+  //   const data = await setElementInDocument(movie, poster, title, genere, year, plot, director, actors, rating);
 });
