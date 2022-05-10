@@ -1,0 +1,62 @@
+html {
+  /* font-size: 10px; */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 3rem auto;
+  text-align: center;
+}
+form {
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  width: 50%;
+  justify-content: space-between;
+  /* align-items: center; */
+  /* border: 1px solid black; */
+}
+
+form > *:not(:first-child) {
+  padding: 0.3rem 0.5rem;
+  margin: 0.1rem;
+}
+
+button {
+  background-color: rgb(228, 71, 71);
+  border-radius: 0.3rem;
+}
+
+.container {
+  display: flex;
+  width: 50%;
+  height: 60vh;
+  /* border: 1px solid black; */
+  margin: 1rem auto;
+}
+
+.container .poster {
+  width: 50%;
+  height: 100%;
+  /* border: 1px solid red; */
+  /* margin-right: 1rem; */
+}
+
+.description {
+  width: 100%;
+}
+
+.description > * {
+  margin-bottom: 0.5rem;
+  margin-left: 1rem;
+}
+.description .title h2 {
+  text-align: center;
+  width: 100%;
+  /* background: rgb(179, 168, 168); */
+}
