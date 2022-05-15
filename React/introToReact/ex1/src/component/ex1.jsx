@@ -1,8 +1,6 @@
 // import React from "react";
 import logo from "../logo.svg";
 
-
-
 function exc1() {
   return (
     <div className="App">

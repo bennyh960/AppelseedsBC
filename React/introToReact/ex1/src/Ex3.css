@@ -1,0 +1,17 @@
+* {
+  box-sizing: 0;
+  margin: 0;
+}
+
+.box-1,
+.box-2,
+.box-3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-3 {
+  flex-direction: column;
+  justify-content: space-around;
+}
