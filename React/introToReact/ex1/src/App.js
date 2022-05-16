@@ -6,16 +6,11 @@ import "./Ex3.css";
 // import Exc3_1 from "./component/EX3.1";
 // import Exc3_2 from "./component/EX3.2";
 // import Container from "./component/EX.4.1";
-import Card from "./component/EX4.2";
-
-// ? Also possible to invoke
-// function App() {
-//   return (
-//     <div>
-//       <Exc3_1 />
-//     </div>
-//   );
-// }
+// import Card from "./component/EX4.2";
+// import Card from "./component/EX6.1";
+// import IncrementButton from "./component/7.1EX";
+// import ShowHide from "./component/7.2EX";
+import CounterButtons from "./component/7.3EX";
 
 class App extends React.Component {
   render() {
@@ -30,7 +25,10 @@ class App extends React.Component {
         {/* <ButtonOb role="important" />
         <ButtonOb role="Not important" font="bold" /> */}
         {/* <Container /> */}
-        <Card />
+        {/* <Card /> */}
+        {/* <IncrementButton /> */}
+        {/* <ShowHide /> */}
+        <CounterButtons />
       </div>
     );
   }
