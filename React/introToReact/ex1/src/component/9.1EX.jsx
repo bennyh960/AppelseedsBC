@@ -13,8 +13,8 @@ export default class Timer extends React.Component {
 
   render() {
     if (this.state.time === 0) {
-      if (Math.random() < 0.5) return <Spinner />;
-      else return <Spinner2 />;
+      if (Math.random() < 0.5) return <Spinner2 />;
+      else return <Spinner />;
     } else {
       return <div>Load for {this.state.time} seaconds</div>;
     }
@@ -34,5 +34,9 @@ Spinner.defaultProps = {
   text: "Loading...",
 };
 function Spinner2(props) {
-  return <div className="loader"></div>;
+  return (
+    <div className="container ">
+      <div className="loader2"></div>
+    </div>
+  );
 }

@@ -1,4 +1,4 @@
-.loader {
+.loader2 {
   border: 16px solid #f3f3f3;
   border-radius: 50%;
   border-top: 16px solid #3498db;
@@ -25,4 +25,13 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
