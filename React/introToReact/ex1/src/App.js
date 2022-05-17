@@ -10,7 +10,10 @@ import "./Ex3.css";
 // import Card from "./component/EX6.1";
 // import IncrementButton from "./component/7.1EX";
 // import ShowHide from "./component/7.2EX";
-import CounterButtons from "./component/7.3EX";
+// import CounterButtons from "./component/7.3EX";
+// import Colors from "./component/EX8.1";
+// import BoxAnimation from "./component/8.2EX";
+import ChangingBox from "./component/8.3EX";
 
 class App extends React.Component {
   render() {
@@ -28,7 +31,10 @@ class App extends React.Component {
         {/* <Card /> */}
         {/* <IncrementButton /> */}
         {/* <ShowHide /> */}
-        <CounterButtons />
+        {/* <CounterButtons /> */}
+        {/* <Colors /> */}
+        {/* <BoxAnimation /> */}
+        <ChangingBox />
       </div>
     );
   }

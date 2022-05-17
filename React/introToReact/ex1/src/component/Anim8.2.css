@@ -1,0 +1,16 @@
+.box {
+  /* border: black 1px solid; */
+  background-color: red;
+  animation: sizeingAnim 1s ease-in;
+}
+
+@keyframes sizeingAnim {
+  from {
+    width: 0px;
+    display: none;
+  }
+  to {
+    width: 100px;
+    display: flex;
+  }
+}
