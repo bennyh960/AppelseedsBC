@@ -1,6 +1,7 @@
 .box {
   /* border: black 1px solid; */
   background-color: red;
+  /* color: rgb(100, 200, rgb(142, 142, 188)); */
   animation: sizeingAnim 1s ease-in;
 }
 

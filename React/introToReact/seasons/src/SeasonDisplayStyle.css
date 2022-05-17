@@ -1,0 +1,33 @@
+.container {
+  /* position: relative; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+  border: 1px solid black;
+}
+.icon-left {
+  align-self: flex-start;
+}
+
+.icon-right {
+  align-self: flex-end;
+}
+
+.Winter {
+  background-color: aliceblue;
+}
+
+.Summer {
+  background-color: orange;
+}
+
+.container.Winter i {
+  color: blue;
+}
+
+.container.Summer i {
+  color: red;
+}

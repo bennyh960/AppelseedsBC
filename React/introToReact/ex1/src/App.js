@@ -13,7 +13,8 @@ import "./Ex3.css";
 // import CounterButtons from "./component/7.3EX";
 // import Colors from "./component/EX8.1";
 // import BoxAnimation from "./component/8.2EX";
-import ChangingBox from "./component/8.3EX";
+// import ChangingBox from "./component/8.3EX";
+import Timer from "./component/9.1EX";
 
 class App extends React.Component {
   render() {
@@ -34,7 +35,8 @@ class App extends React.Component {
         {/* <CounterButtons /> */}
         {/* <Colors /> */}
         {/* <BoxAnimation /> */}
-        <ChangingBox />
+        {/* <ChangingBox /> */}
+        <Timer />
       </div>
     );
   }

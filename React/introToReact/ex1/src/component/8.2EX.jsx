@@ -18,11 +18,6 @@ export default class BoxAnimation extends React.Component {
   }
   render() {
     return (
-      //   <div style={{ height: 200, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
-      //     <div className="box" style={{ width: this.state.widthA, height: 100, backgroundColor: "red" }}></div>
-      //     <div className="box" style={{ width: this.state.widthB, height: 50, backgroundColor: "red" }}></div>
-      //     <div className="box" style={{ width: this.state.widthC, height: 20, backgroundColor: "red" }}></div>
-      //   </div>
       <div style={{ height: 200, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
         <div className="box" style={{ height: 100, width: 100, display: this.state.display }}></div>
         <div className="box" style={{ height: 50, width: 60, display: this.state.display }}></div>
