@@ -14,7 +14,11 @@ import "./Ex3.css";
 // import Colors from "./component/EX8.1";
 // import BoxAnimation from "./component/8.2EX";
 // import ChangingBox from "./component/8.3EX";
-import Timer from "./component/9.1EX";
+// import Timer from "./component/9.1EX";
+// import Draft from "./component/draft";
+// import ColorButtons from "./component/11.1EX";
+// import CheckBoxFather from "./component/11.2EX";
+import Survey from "./component/11.3EX";
 
 class App extends React.Component {
   render() {
@@ -36,7 +40,11 @@ class App extends React.Component {
         {/* <Colors /> */}
         {/* <BoxAnimation /> */}
         {/* <ChangingBox /> */}
-        <Timer />
+        {/* <Timer /> */}
+        {/* <ColorButtons /> */}
+        {/* <CheckBoxFather /> */}
+        <Survey />
+        {/* <Draft /> */}
       </div>
     );
   }
