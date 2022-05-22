@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import "./Ex3.css";
+// import "./Ex3.css";
 // import exc1 from "./component/ex1";
 // import exc2 from "./component/ex2";
 // import Exc3_1 from "./component/EX3.1";
@@ -19,7 +19,8 @@ import "./Ex3.css";
 // import ColorButtons from "./component/11.1EX";
 // import CheckBoxFather from "./component/11.2EX";
 // import Survey from "./component/11.3EX";
-import ShopingInventory from "./component/shopinglist/shopingInventory";
+// import ShopingInventory from "./component/shopinglist/shopingInventory";
+import ChuckNorisJokes from "./component/12.1EX";
 
 class App extends React.Component {
   render() {
@@ -45,7 +46,8 @@ class App extends React.Component {
         {/* <ColorButtons /> */}
         {/* <CheckBoxFather /> */}
         {/* <Survey /> */}
-        <ShopingInventory />
+        {/* <ShopingInventory /> */}
+        <ChuckNorisJokes />
       </div>
     );
   }

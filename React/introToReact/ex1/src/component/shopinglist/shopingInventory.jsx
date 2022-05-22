@@ -79,6 +79,8 @@ function DataToShow(props) {
             } else {
               if (p.stocked) return <Product name={p.name} price={p.price} key={p.name} />;
             }
+          } else {
+            return "";
           }
         })}
       </React.Fragment>
