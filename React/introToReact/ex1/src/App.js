@@ -20,7 +20,8 @@ import "./App.css";
 // import CheckBoxFather from "./component/11.2EX";
 // import Survey from "./component/11.3EX";
 // import ShopingInventory from "./component/shopinglist/shopingInventory";
-import ChuckNorisJokes from "./component/12.1EX";
+// import ChuckNorisJokes from "./component/12.1EX";
+import DataMassging from "./component/dataMassaging/13.1EX";
 
 class App extends React.Component {
   render() {
@@ -47,7 +48,8 @@ class App extends React.Component {
         {/* <CheckBoxFather /> */}
         {/* <Survey /> */}
         {/* <ShopingInventory /> */}
-        <ChuckNorisJokes />
+        {/* <ChuckNorisJokes /> */}
+        <DataMassging />
       </div>
     );
   }

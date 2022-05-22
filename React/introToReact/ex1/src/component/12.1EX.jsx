@@ -4,10 +4,10 @@ import axios from "axios";
 export default class ChuckNorisJokes extends React.Component {
   state = { joke: undefined, categorisArr: [], category: undefined };
   onJokeClick = async () => {
-    const randomJoke = await axios.get(`https://api.chucknorris.io/jokes/random?category=${this.state.category}`);
-    // const randomJoke = await axios.get("https://api.chucknorris.io/jokes/random", {
-    //   params: { query: this.state.category },
-    // });
+    // const randomJoke = await axios.get(`https://api.chucknorris.io/jokes/random?category=${this.state.category}`);
+    const randomJoke = await axios.get("https://api.chucknorris.io/jokes/random", {
+      params: { category: this.state.category },
+    });
     // console.log(randomJoke.data);
     this.setState({ joke: randomJoke.data.value });
     // this.getCategoris();
