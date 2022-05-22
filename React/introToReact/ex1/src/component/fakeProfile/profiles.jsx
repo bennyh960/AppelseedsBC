@@ -3,7 +3,7 @@ import axios from "axios";
 import "./style2.css";
 
 export default class Profiles extends Component {
-  state = { profiles: [], isSpining: true };
+  state = { profiles: [], isSpining: true, isFiltered: false, inputData: undefined };
 
   getProfile = async () => {
     try {
@@ -19,25 +19,59 @@ export default class Profiles extends Component {
     await this.getProfile();
   }
 
+  handleInput = (filtred) => {
+    if (filtred) {
+      this.setState({ inputData: filtred, isFiltered: true });
+    } else {
+      this.setState({ isFiltered: false });
+    }
+  };
+
   render() {
-    const dataShow = "Spinner" ? this.state.isSpining : this.state.profiles[0].name.first;
     return (
       <div className="container-all">
-        <Input />
-        <div>{this.state.isSpining && "SPINNER"}</div>
-
-        <Cards name={this.state.profiles.name} />
+        <Input inputFilter={this.handleInput} />
+        {(this.state.isSpining && <div>SPINNER</div>) || (
+          <Cards isFiltred={this.state.isFiltered} names={this.state.profiles} filtredNames={this.state.inputData} />
+        )}
       </div>
     );
   }
 }
 
 function Input(props) {
-  return <input placeholder="Filter" />;
+  return (
+    <input
+      onChange={(e) => {
+        props.inputFilter(e.target.value);
+        // console.log(e.target.value);
+      }}
+      placeholder="Filter"
+    />
+  );
 }
 
 function Cards(props) {
-  if (props.name) {
-    return <div>name:{props.name.first}</div>;
+  if (props.names.length > 0) {
+    let arrOfPeople = props.names;
+    console.log(props.filtredNames, props.isFiltred);
+    if (props.isFiltred) {
+      console.log(props.filtredNames);
+      arrOfPeople = arrOfPeople.filter((avatar) =>
+        (avatar.name.first + avatar.name.last).toLowerCase().includes(props.filtredNames.toLowerCase())
+      );
+    }
+    return (
+      <div className="container-cards">
+        {arrOfPeople.map((avatar, i) => {
+          return (
+            <div key={i} className="card">
+              <div>{`${avatar.name.title}  ${avatar.name.first}  ${avatar.name.last}`}</div>
+              <img src={avatar.picture.large} alt={avatar.name.first} />
+            </div>
+          );
+        })}
+      </div>
+    );
   }
 }
