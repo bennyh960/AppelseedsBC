@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+.container-all {
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+}
+
+.conatiner-profiles {
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  width: 90vw;
+  height: 90vh;
+  border: 1px solid black;
+  justify-content: center;
+}
+
+.card {
+  margin-right: 0.5rem;
+  width: 15rem;
+  height: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}

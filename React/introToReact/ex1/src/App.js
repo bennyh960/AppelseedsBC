@@ -21,7 +21,9 @@ import "./App.css";
 // import Survey from "./component/11.3EX";
 // import ShopingInventory from "./component/shopinglist/shopingInventory";
 // import ChuckNorisJokes from "./component/12.1EX";
-import DataMassging from "./component/dataMassaging/13.1EX";
+// import DataMassging from "./component/dataMassaging/13.1EX";
+// import FakeProfile from "./component/fakeProfile/13.2EX";
+import Profiles from "./component/fakeProfile/profiles";
 
 class App extends React.Component {
   render() {
@@ -49,7 +51,9 @@ class App extends React.Component {
         {/* <Survey /> */}
         {/* <ShopingInventory /> */}
         {/* <ChuckNorisJokes /> */}
-        <DataMassging />
+        {/* <DataMassging /> */}
+        {/* <FakeProfile /> */}
+        <Profiles />
       </div>
     );
   }
