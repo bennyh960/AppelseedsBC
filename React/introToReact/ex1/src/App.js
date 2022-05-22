@@ -23,7 +23,8 @@ import "./App.css";
 // import ChuckNorisJokes from "./component/12.1EX";
 // import DataMassging from "./component/dataMassaging/13.1EX";
 // import FakeProfile from "./component/fakeProfile/13.2EX";
-import Profiles from "./component/fakeProfile/profiles";
+// import Profiles from "./component/fakeProfile/profiles";
+import Profiles2 from "./component/fakeProfile/profiles2";
 
 class App extends React.Component {
   render() {
@@ -53,7 +54,8 @@ class App extends React.Component {
         {/* <ChuckNorisJokes /> */}
         {/* <DataMassging /> */}
         {/* <FakeProfile /> */}
-        <Profiles />
+        {/* <Profiles /> */}
+        <Profiles2 />
       </div>
     );
   }
