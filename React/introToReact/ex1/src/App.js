@@ -18,7 +18,8 @@ import "./Ex3.css";
 // import Draft from "./component/draft";
 // import ColorButtons from "./component/11.1EX";
 // import CheckBoxFather from "./component/11.2EX";
-import Survey from "./component/11.3EX";
+// import Survey from "./component/11.3EX";
+import ShopingInventory from "./component/shopinglist/shopingInventory";
 
 class App extends React.Component {
   render() {
@@ -43,8 +44,8 @@ class App extends React.Component {
         {/* <Timer /> */}
         {/* <ColorButtons /> */}
         {/* <CheckBoxFather /> */}
-        <Survey />
-        {/* <Draft /> */}
+        {/* <Survey /> */}
+        <ShopingInventory />
       </div>
     );
   }
