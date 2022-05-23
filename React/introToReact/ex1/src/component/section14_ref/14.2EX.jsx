@@ -8,6 +8,7 @@ export default class CopyBtn extends Component {
   }
 
   copyText = () => {
+    this.inputRef.current.select();
     navigator.clipboard.writeText(this.inputRef.current.value);
     // navigator.clipboard.readText().then((clipText) => {
     //   console.log("Copied Text:", clipText);

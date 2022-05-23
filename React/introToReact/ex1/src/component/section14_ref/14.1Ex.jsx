@@ -18,10 +18,11 @@ class Form extends Component {
   constructor(props) {
     super(props);
     this.inputRef = React.createRef();
+    this.placeholder = "blablabla";
   }
 
   componentDidMount = () => {
-    // console.log(this.inputRef.current);
+    console.dir(this.inputRef.current);
     this.inputRef.current.focus();
   };
   render() {
@@ -29,6 +30,7 @@ class Form extends Component {
       <form>
         <label htmlFor="myInput">This field is on focus on load and on lable click</label>
         <input ref={this.inputRef} type="text" id="myInput" />
+        <input type="text" id="myInput" placeholder={this.placeholder} />
       </form>
     );
   }

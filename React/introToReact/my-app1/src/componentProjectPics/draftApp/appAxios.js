@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import SearchBar from "./searchBar";
+import SearchBar from "../searchBar";
 
 // simple how to pool data with axios.
 class App extends React.Component {
