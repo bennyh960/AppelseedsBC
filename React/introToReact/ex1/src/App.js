@@ -24,7 +24,8 @@ import "./App.css";
 // import DataMassging from "./component/dataMassaging/13.1EX";
 // import FakeProfile from "./component/fakeProfile/13.2EX";
 // import Profiles from "./component/fakeProfile/profiles";
-import Profiles2 from "./component/fakeProfile/profiles2";
+// import Profiles2 from "./component/fakeProfile/profiles2";
+import Profiles3 from "./component/fakeProfile/profiles3";
 
 class App extends React.Component {
   render() {
@@ -55,7 +56,8 @@ class App extends React.Component {
         {/* <DataMassging /> */}
         {/* <FakeProfile /> */}
         {/* <Profiles /> */}
-        <Profiles2 />
+        {/* <Profiles2 /> */}
+        <Profiles3 />
       </div>
     );
   }
