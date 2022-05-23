@@ -25,7 +25,9 @@ import "./App.css";
 // import FakeProfile from "./component/fakeProfile/13.2EX";
 // import Profiles from "./component/fakeProfile/profiles";
 // import Profiles2 from "./component/fakeProfile/profiles2";
-import Profiles3 from "./component/fakeProfile/profiles3";
+// import Profiles3 from "./component/fakeProfile/profiles3";
+// import Focus from "./component/section14_ref/14.1Ex";
+import CopyBtn from "./component/section14_ref/14.2EX";
 
 class App extends React.Component {
   render() {
@@ -57,7 +59,9 @@ class App extends React.Component {
         {/* <FakeProfile /> */}
         {/* <Profiles /> */}
         {/* <Profiles2 /> */}
-        <Profiles3 />
+        {/* <Profiles3 /> */}
+        {/* <Focus /> */}
+        <CopyBtn />
       </div>
     );
   }
