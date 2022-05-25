@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 10px;
+}
+
+.container {
+  width: 90vw;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: auto;
+  border: 1px solid black;
+}
+
+.user-input-container {
+  width: 70vw;
+  display: flex;
+  justify-content: space-around;
+  /* align-items: center; */
+  margin: 3rem auto;
+}
