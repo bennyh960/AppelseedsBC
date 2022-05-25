@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: linear-gradient(rgb(212, 237, 212), rgb(222, 246, 222), rgb(210, 210, 240), rgb(185, 185, 245));
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem auto;
+  width: 90vw;
+  /* border: 1px solid red; */
+}
+
+.form > * {
+  background-image: linear-gradient(rgb(222, 216, 216), rgb(157, 173, 157), rgb(175, 175, 185));
+  margin: 1rem;
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+}
+
+.todo-input {
+  width: 300px;
+}
+
+.task-show {
+  /* display: flex; */
+  width: 90vw;
+  margin: auto;
+  display: grid;
+  /* grid-template-columns: 30px 30px 100px 100px 1fr 50px 70px 1fr; */
+  grid-template-columns: 30px 30px 100px 100px 1fr 50px 70px;
+  align-items: center;
+  text-align: center;
+  border: 1px solid black;
+}
+
+.task-show > * {
+  margin: 0.5rem;
+  /* border: 1px solid black; */
+}
