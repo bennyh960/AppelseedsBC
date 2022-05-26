@@ -73,7 +73,6 @@ export default class AppMoc extends Component {
             } else {
               return p;
             }
-            // return data ? p.id === peopleID : p;
           }),
           isSpinner: false,
         };

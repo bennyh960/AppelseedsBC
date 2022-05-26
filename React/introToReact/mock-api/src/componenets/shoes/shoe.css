@@ -1,0 +1,19 @@
+.food {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.button-ed {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  /* border: black solid 2px; */
+}
+
+img {
+  width: 10rem;
+  height: 10rem;
+}
