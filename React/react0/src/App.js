@@ -1,61 +1,51 @@
-import logo from "./logo.svg";
+import React, { Component } from "react";
+import Buttns from "./componenets/buttns/buttns";
+import Smilies from "./componenets/smilies/smilies";
+import Images from "./componenets/images/images";
 import "./App.css";
-import React from "react";
-import { defaults } from "figlet";
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
+export default class App extends Component {
+  state = { arrOfImages: [], currentImg: "", isSpinner: true, like: 0, dislike: 0, index: 1, currentName: "" };
 
-// export default App;
+  componentDidMount = async () => {
+    const data = await fetch("https://628e3408368687f3e712634b.mockapi.io/shopme");
+    const data2 = await data.json();
 
-// ? we going to write our first componenent
-// ? Componennet that return jsx . jsx converted to html
+    this.setState((prev) => {
+      return { arrOfImages: data2, currentImg: data2[0].image, isSpinner: false, currentName: data2[0].name };
+    });
+  };
 
-class App extends React.Component {
-  constructor() {
-    super();
-  }
+  likeDisLikeClick = (answere) => {
+    if (this.state.index < this.state.arrOfImages.length) {
+      this.setState((prev) => {
+        return {
+          currentImg: prev.arrOfImages[prev.index].image,
+          currentName: prev.arrOfImages[prev.index].name,
+          index: prev.index + 1,
+          [answere]: prev[answere] + 1,
+        };
+      });
+    }
+  };
+
   render() {
-    return <Header />;
-  }
-}
-
-const text = "Hello benny";
-class Header extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      text2: "this is from class header",
-      text3: "this is text 3",
-    };
-  }
-  render() {
-    // return <h1>Hello world from App componenent its not so understanedbale now</h1>;
-    // return <h1>{text}</h1>;
+    if (this.state.isSpinner) {
+      return <div></div>;
+    }
     return (
-      <div>
-        <h1>{this.state.text2}</h1>;<h3>{this.state.text3}</h3>;
+      <div className="container">
+        <Smilies like={this.state.like} dislike={this.state.dislike} />
+        <Images image={this.state.currentImg} name={this.state.currentName} />
+        <Buttns
+          disLikeClick={() => {
+            this.likeDisLikeClick("dislike");
+          }}
+          likeClick={() => {
+            this.likeDisLikeClick("like");
+          }}
+        />
       </div>
     );
   }
 }
-
-export default App;
