@@ -3,4 +3,9 @@
   justify-content: space-around;
   width: 100%;
   margin-top: 3rem;
+  /* background-color: aqua; */
+}
+.icon-yellow {
+  color: yellow;
+  font-size: 2rem;
 }

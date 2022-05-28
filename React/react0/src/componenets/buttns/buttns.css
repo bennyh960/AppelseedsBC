@@ -3,3 +3,17 @@
   justify-content: space-around;
   width: 100%;
 }
+
+button {
+  /* background-color: #db2828; */
+  padding: 0.2rem 0.7rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+.icon-blue {
+  color: blue;
+}
+.icon-red {
+  color: red;
+}
