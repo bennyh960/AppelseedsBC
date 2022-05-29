@@ -26,6 +26,7 @@ export default function ReadMoreLess({ text, maxLength }) {
         >
           {readStatus}
         </button>
+        {ReadMoreLess2(text, maxLength)}
       </div>
     </div>
   );
@@ -33,3 +34,21 @@ export default function ReadMoreLess({ text, maxLength }) {
 
 // text as a string
 // maxLength as a num
+
+function ReadMoreLess2(text, maxLength) {
+  const [isHidden, setIsHidden] = useState(true);
+  const HandleClick = () => {
+    setIsHidden(!isHidden);
+  };
+  return (
+    <div>
+      {isHidden ? text.substring(0, maxLength) : text}
+      <button
+        onClick={HandleClick}
+        style={{ border: "none", color: "blue", backgroundColor: "transparent", cursor: "pointer" }}
+      >
+        {isHidden ? "Read more" : "Read less"}
+      </button>
+    </div>
+  );
+}

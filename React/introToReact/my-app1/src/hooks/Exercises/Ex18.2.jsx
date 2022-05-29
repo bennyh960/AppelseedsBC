@@ -11,9 +11,18 @@ const todoArr = [
 export default function Todo() {
   const [arr, setArr] = useState(todoArr);
   const handleClick = (i) => {
-    // console.log(i);
-    arr[i] = { name: arr[i].name, completed: !arr[i].completed };
-    setArr([...arr]);
+    // solutuion one;
+    // arr[i] = { name: arr[i].name, completed: !arr[i].completed };
+    // setArr([...arr]);
+    //solution 2
+    setArr((prev) => {
+      return prev.map((t, index) => {
+        if (i === index) {
+          return { ...t, completed: !t.completed };
+        }
+        return t;
+      });
+    });
   };
   const renderAllMissions = () => {
     return arr.map((m, i) => {
