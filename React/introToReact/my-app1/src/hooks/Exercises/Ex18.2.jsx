@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+// import axios from "axios";
 
 const todoArr = [
   { name: "CSS", completed: true },
@@ -38,7 +39,6 @@ export default function Todo() {
   return (
     <div>
       <div>{renderAllMissions()}</div>
-      {/* <div>world</div> */}
     </div>
   );
 }

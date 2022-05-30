@@ -8,11 +8,11 @@ export default function Accordion({ items }) {
     setActiveIndex(index);
   };
   const renderingItems = items.map((item, idx) => {
-    const active = idx === activeIndex ? "active" : "";
+    const isActive = idx === activeIndex ? "active" : "";
     return (
       <React.Fragment key={item.title}>
         <div
-          className={`title ${active}`}
+          className={`title ${isActive}`}
           onClick={() => {
             onTitleClicked(idx);
           }}
@@ -20,7 +20,7 @@ export default function Accordion({ items }) {
           <i className="dropdown icon"></i>
           {item.title}
         </div>
-        <div className={`content ${active}`}>
+        <div className={`content ${isActive}`}>
           <p>{item.content}</p>
         </div>
       </React.Fragment>
