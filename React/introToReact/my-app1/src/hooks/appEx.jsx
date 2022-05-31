@@ -8,7 +8,12 @@ import React from "react";
 // import Countries from "./Exercises/Ex.19.2";
 // import Alogolia from "./Exercises/Ex.19.3";
 // import ChuckNorris from "./Exercises/Ex.19.4";
-import Avatars from "./Exercises/Ex.19.4.2";
+// import Avatars from "./Exercises/Ex.19.4.2";
+// import CleanUpEx from "./Exercises/Ex.20.1";
+// import EditingApp from "./useRef/Ex.21.1";
+// import VideoPlayer from "./useRef/Ex.21.2";
+import ImageToggle from "./useRef/Ex.21.3";
+
 export default function App() {
   return (
     <div>
@@ -23,7 +28,11 @@ export default function App() {
       {/* <Countries /> */}
       {/* <Alogolia /> */}
       {/* <ChuckNorris /> */}
-      <Avatars />
+      {/* <Avatars /> */}
+      {/* <CleanUpEx /> */}
+      {/* <EditingApp /> */}
+      {/* <VideoPlayer /> */}
+      <ImageToggle />
     </div>
   );
 }
