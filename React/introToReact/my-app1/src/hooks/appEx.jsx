@@ -12,7 +12,8 @@ import React from "react";
 // import CleanUpEx from "./Exercises/Ex.20.1";
 // import EditingApp from "./useRef/Ex.21.1";
 // import VideoPlayer from "./useRef/Ex.21.2";
-import ImageToggle from "./useRef/Ex.21.3";
+// import ImageToggle from "./useRef/Ex.21.3";
+import Parent from "./useContext/parent";
 
 export default function App() {
   return (
@@ -32,7 +33,8 @@ export default function App() {
       {/* <CleanUpEx /> */}
       {/* <EditingApp /> */}
       {/* <VideoPlayer /> */}
-      <ImageToggle />
+      {/* <ImageToggle /> */}
+      <Parent />
     </div>
   );
 }
