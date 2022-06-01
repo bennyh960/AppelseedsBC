@@ -13,7 +13,9 @@ import React from "react";
 // import EditingApp from "./useRef/Ex.21.1";
 // import VideoPlayer from "./useRef/Ex.21.2";
 // import ImageToggle from "./useRef/Ex.21.3";
-import Parent from "./useContext/parent";
+// import Parent from "./useContext/example1/parent";
+// import Parent from "./useContext/example2Custom/parent";
+import Parent from "./useContext/example3/parent";
 
 export default function App() {
   return (
