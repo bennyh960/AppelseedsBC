@@ -9,6 +9,7 @@ const loadPokemons = () => {
     const pokemonBuffer = fs.readFileSync("pokemon.json");
     const pokemonStr = pokemonBuffer.toString();
     const pokemonObj = JSON.parse(pokemonStr);
+    // debugger;
     // console.log(pokemonObj);
     return pokemonObj;
   } catch (error) {
@@ -38,10 +39,11 @@ const addPokemon = (newPokemon) => {
     console.log(newPokemon.name, "already exist");
   }
 };
-
+debugger;
 // ? Add invoke functions
 // addPokemon({ name: "Dragonite", atk: 300, def: 250, spa: 200, spd: 300, speed: 280 });
 // addPokemon({ name: "Tyrnitar", atk: 330, def: 350, spa: 100, spd: 220, speed: 210 });
+addPokemon({ name: "Grachomp", atk: 330, def: 350, spa: 100, spd: 220, speed: 210 });
 
 // * Delete
 const deleter = (deletName) => {
@@ -71,4 +73,4 @@ const update = (pokemonName, { atk, def, spa, spd, speed }) => {
   }
 };
 
-update("Tyrnitar", { atk: 320, def: 300, spa: 120, spd: 250, speed: 200 });
+// update("Tyrnitar", { atk: 320, def: 300, spa: 120, spd: 250, speed: 200 });
