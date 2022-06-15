@@ -7,6 +7,8 @@ app.use(express.json());
 
 const array = [1, 2, 3, 4, 5, 6];
 
+// const port = process.env.Port || 3000
+
 app.get("/", (req, res) => {
   res.send(array);
 });
