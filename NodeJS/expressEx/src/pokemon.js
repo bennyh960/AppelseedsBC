@@ -1,5 +1,6 @@
 import fs from "fs";
 import uniqid from "uniqid";
+import chalk from "chalk";
 
 // fs.writeFileSync("pokemon.json", "");
 
@@ -38,8 +39,9 @@ const addPokemon = (newPokemon) => {
   } else {
     console.log(newPokemon.name, "already exist");
   }
+  return;
 };
-debugger;
+// debugger;
 // ? Add invoke functions
 // addPokemon({ name: "Dragonite", atk: 300, def: 250, spa: 200, spd: 300, speed: 280 });
 // addPokemon({ name: "Tyrnitar", atk: 330, def: 350, spa: 100, spd: 220, speed: 210 });
@@ -68,6 +70,7 @@ const update = (pokemonName, { atk, def, spa, spd, speed }) => {
     pokemons[index] = { ...pokemons[index], atk, def, spa, spd, speed };
     saveData(pokemons);
     //   console.log(pokemons[index]);
+    console.log(chalk.green.inverse(pokemonName + " data updated"));
   } else {
     console.log("Pokemon not found", pokemonName);
   }
