@@ -14,14 +14,15 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use(cors());
 
-const getWether = async () => {
-  const { data } = await axios.get("https://goweather.herokuapp.com/weather/ashkelon");
+const getWether = async (city) => {
+  const { data } = await axios.get(`https://goweather.herokuapp.com/weather/${city}`);
   console.log(data.temperature);
   return data.temperature;
 };
 
-app.get("/api", async (req, res) => {
-  res.send(await getWether());
+app.get("/api/:city", async (req, res) => {
+  res.send(await getWether(req.params.city));
+  console.log(req.params.city);
   //   getWether();
   //   res.send("xxx");
 });
