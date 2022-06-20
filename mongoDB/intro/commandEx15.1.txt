@@ -1,0 +1,4 @@
+mongo
+db.use("findMyResturant") => create db
+db.createCollection("resturant") => create createCollection
+db.resturant.insert({copied data})
