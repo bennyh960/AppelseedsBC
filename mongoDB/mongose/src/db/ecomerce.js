@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const validator = require("validator");
-const { array } = require("yargs");
 
 // * Create connection to DB
 mongoose.connect("mongodb://127.0.0.1:27017/ecommerc-site2", {
@@ -8,6 +7,14 @@ mongoose.connect("mongodb://127.0.0.1:27017/ecommerc-site2", {
   useCreateIndex: true,
 });
 
+// another methode to connect mongo
+// mongoose.connect('mongodb://127.0.0.1/AppleSeedsTestDB', (error, mongoConnectionInstance) => {
+//   if (error) throw Error('Mongoose Connection!!, Error: ' + error);
+//   if (!process.env.NODE_ENV) {
+//     const { host, port, name } = mongoConnectionInstance;
+//     console.log({ host, port, name });
+//   }
+// });
 const details = new mongoose.Schema({
   description: {
     type: String,
