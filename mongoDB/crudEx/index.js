@@ -10,45 +10,40 @@ const port = process.env.port || 3000;
 app.use(express.json());
 
 // *+++++++++++++++++ Get methodes +++++++++++++++++++++++++
-app.get("/products", (req, res) => {
-  Product.find({})
-    .then((products) => {
-      res.send(products);
-    })
-    .catch((e) => {
-      res.status(500).send(e.message);
-    });
+app.get("/products", async (req, res) => {
+  try {
+    const products = await Product.find();
+    res.send(products);
+  } catch (e) {
+    res.status(500).send(e.message);
+  }
 });
 
-app.get("/products/active", (req, res) => {
+app.get("/products/active", async (req, res) => {
   //   User.find({ _id: req.params.userID }) // return array with the found obj
-  Product.find({ isActive: false })
-    .then((product) => {
-      if (!product) {
-        return res.status(404).send();
-      }
-      res.send(product);
-    })
-    .catch((e) => {
-      res.status(500).send(e.message);
-      //   console.log(e);
-    });
+  try {
+    const product = await Product.find({ isActive: false });
+    if (!product) {
+      return res.status(404).send();
+    }
+    res.send(product);
+  } catch (e) {
+    res.status(500).send(e.message);
+  }
 });
 
-app.get("/products/price", (req, res) => {
+app.get("/products/price", async (req, res) => {
   //   User.find({ _id: req.params.userID }) // return array with the found obj
-  Product.find({ "detailes.price": { $gte: 100, $lt: 150 } })
-    .then((product) => {
-      if (!product) {
-        return res.status(404).send();
-      }
-      res.send(product);
-      //   console.log(Product.detailes);
-    })
-    .catch((e) => {
-      res.status(500).send(e.message);
-      //   console.log(e);
-    });
+  try {
+    const product = await Product.find({ "detailes.price": { $gte: 10, $lt: 30 } });
+
+    if (!product) {
+      return res.status(404).send();
+    }
+    res.send(product);
+  } catch (error) {
+    res.status(500).send(e.message);
+  }
 });
 
 app.get("/products/:id", (req, res) => {
@@ -65,16 +60,15 @@ app.get("/products/:id", (req, res) => {
 });
 // *+++++++++++++++++ Post  methodes +++++++++++++++++++++++++
 
-app.post("/products", (req, res) => {
-  const product = new Product(req.body);
-  product
-    .save()
-    .then(() => {
-      res.status(201).send(product);
-    })
-    .catch((e) => {
-      res.status(400).send(e.message);
-    });
+app.post("/products", async (req, res) => {
+  try {
+    const product = new Product(req.body);
+
+    await product.save();
+    res.status(201).send(product);
+  } catch (e) {
+    res.status(400).send(e.message);
+  }
 });
 
 // *====================================================

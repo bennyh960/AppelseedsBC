@@ -15,6 +15,7 @@ const User = mongoose.model("User", {
   email: {
     type: String,
     required: true,
+    unique: true,
     trim: true,
     lowercase: true,
     validate(value) {
