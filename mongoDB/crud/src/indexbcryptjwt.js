@@ -2,33 +2,17 @@ const express = require("express");
 require("./db/mongoose");
 const chalk = require("chalk");
 
+// ************************************************
+//?      version 4 : including autentication     //
+// ************************************************
+
 const taskRouter = require("./routers/task.router.js");
 const userRouter = require("./routers/user.router.js");
-
-// ************************************************
-//?      version 5 : Creating custom express midlawere      //
-// ************************************************
 
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-//* custom middelware
-// app.use((req, res, next) => {
-//   if (req.method === "Get") {
-//     res.send("GET requests are disable");
-//   } else {
-//     next();
-//   }
-//   next();
-// });
-
-// * Custom middelware
-// app.use((req, res, next) => {
-//   res.status(503).send("Site is currently down for maintanance. check back soon");
-// });
-
 app.use(userRouter);
 app.use(taskRouter);
 

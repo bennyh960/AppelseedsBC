@@ -1,12 +1,16 @@
 const mongoose = require("mongoose");
 const validator = require("validator");
+const chalk = require("chalk");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 // mongoose.connect("mongodb://127.0.0.1:27017/task-manager-api", {
 //   useNewUrlParser: true,
 //   useCreateIndex: true,
 // });
 
-const User = mongoose.model("User", {
+// *
+const userSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -45,7 +49,55 @@ const User = mongoose.model("User", {
       }
     },
   },
+  tokens: [
+    {
+      token: {
+        type: String,
+        require: true,
+      },
+    },
+  ],
 });
+
+// * func for token generate
+userSchema.methods.generateAuthToken = async function () {
+  const user = this;
+  const token = jwt.sign({ _id: user._id.toString() }, "thisismynewcourse");
+  user.tokens = user.tokens.concat({ token });
+  await user.save();
+  return token;
+};
+
+// * static func for credntials
+userSchema.statics.findByCredentials = async (email, password) => {
+  const user = await User.findOne({ email });
+
+  if (!user) {
+    throw new Error("Enable to login (wrong email)");
+  }
+
+  const isMatch = await bcrypt.compare(password, user.password);
+
+  if (!isMatch) {
+    throw new Error("Enable to login (wrong password)");
+  }
+  console.log(chalk.green.inverse("Login succesfuly"));
+  return user;
+};
+
+// here we cant use arror function as callback due to this issue
+// * Hash the plain text password before saving
+userSchema.pre("save", async function (next) {
+  const user = this;
+
+  if (user.isModified("password")) {
+    console.log(chalk.yellow.inverse("Password encryption done"));
+    user.password = await bcrypt.hash(user.password, 8);
+  }
+
+  next(); //make sure next call inorder midlaware continue to next opertaion
+});
+const User = mongoose.model("User", userSchema);
 
 module.exports = User;
 
