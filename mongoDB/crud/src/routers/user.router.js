@@ -2,6 +2,7 @@
 const { Router } = require("express");
 const chalk = require("chalk");
 const User = require("../db/moduls/users");
+const auth = require("../middelware/auth.js");
 const router = new Router();
 
 // ******** SIGN IN  *************
@@ -45,6 +46,10 @@ router.get("/users", async (req, res) => {
     // console.log(chalk.red(e.message));
     res.status(500).send(e.message);
   }
+});
+
+router.get("/users/me", auth, async (req, res) => {
+  res.send(req.user);
 });
 
 router.get("/users/:userID", async (req, res) => {
