@@ -1,0 +1,31 @@
+Date, ,Name,Type
+
+
+Jan 1,Saturday,New Year,Public Holiday
+
+Feb 4,Friday,Liberation Movement Day,Public Holiday
+
+Mar 1,Tuesday,Carnival,Public Holiday
+Mar 7,Monday,Day off for International Woman's Day,Public Holiday
+Mar 8,Tuesday,International Woman's Day,Public Holiday
+Mar 20,Sunday,March Equinox,Season
+Mar 23,Wednesday,Southern Africa Liberation Day,Public Holiday
+
+Apr 4,Monday,Peace Day,Public Holiday
+Apr 15,Friday,Good Friday,Public Holiday
+
+May 1,Sunday,May Day,Public Holiday
+
+Jun 21,Tuesday,June Solstice,Season
+
+
+
+Sep 17,Saturday,National Hero Day,Public Holiday
+Sep 23,Friday,September Equinox,Season
+
+
+Nov 2,Wednesday,All Souls' Day,Public Holiday
+Nov 11,Friday,Independence Day,Public Holiday
+
+Dec 21,Wednesday,December Solstice,Season
+Dec 25,Sunday,Christmas Day,Public Holiday

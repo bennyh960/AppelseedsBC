@@ -15,7 +15,9 @@ function App() {
       // setData(data.data);
       setData(dataFromBE.data);
     };
-    getApi();
+    if (cityS) {
+      getApi();
+    }
   }, [cityS]);
 
   const handleSub = (e) => {
