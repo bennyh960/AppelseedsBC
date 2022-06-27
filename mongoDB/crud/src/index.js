@@ -66,3 +66,20 @@ app.listen(port, () => {
 //   console.log(data);
 // };
 // myfunc();
+
+// Using relation between task and user
+// const Task = require("./db/moduls/tasks.js");
+// const User = require("./db/moduls/users.js");
+// const main = async () => {
+// * task populate
+// const task = await Task.findById("62b9583848c5f92328c0b46e");
+// const user = await task.populate("owner").execPopulate(); // user id is got a ref in task model
+// console.log(user);
+// console.log(task.owner);
+// * user
+// const user = await User.findById("62b8d2483b2cfb4e00bd30c6");
+// await user.populate("tasks").execPopulate();
+// console.log(user.tasks); // define by userSchema.virtual()at users.js
+// };
+
+// main();

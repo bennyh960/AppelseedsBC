@@ -2,9 +2,14 @@ const express = require("express");
 const chalk = require("chalk");
 const Task = require("../db/moduls/tasks");
 const router = new express.Router();
+const auth = require("../middelware/auth.js");
 
-router.post("/tasks", async (req, res) => {
-  const task = new Task(req.body);
+router.post("/tasks", auth, async (req, res) => {
+  // const task = new Task(req.body);
+  const task = new Task({
+    ...req.body,
+    owner: req.user._id,
+  });
   try {
     const newTask = await task.save();
     res.status(201).send(newTask);
@@ -14,19 +19,26 @@ router.post("/tasks", async (req, res) => {
   }
 });
 
-router.get("/tasks", async (req, res) => {
+router.get("/tasks", auth, async (req, res) => {
   try {
-    const getTasks = await Task.find();
-    res.send(getTasks);
+    // const tasks = await Task.find({ owner: req.user._id });
+    await req.user.populate("tasks").execPopulate();
+
+    res.send(tasks);
   } catch (e) {
     res.status(500).send(e.message);
     console.log(chalk.red(e.message));
   }
 });
 
-router.get("/tasks/:id", async (req, res) => {
+router.get("/tasks/:id", auth, async (req, res) => {
   try {
-    const getTask = await Task.findById(req.params.id);
+    // find any task by id
+    // const getTask = await Task.findById(req.params.id);
+    // find task related to user who create it
+    const _id = req.params.id;
+    const getTask = await Task.findOne({ _id, owner: req.user._id });
+
     if (!getTask) {
       return res.status(404).send("Task not found");
     }
@@ -40,7 +52,7 @@ router.get("/tasks/:id", async (req, res) => {
 // * UPDATE ====================================
 
 // *update task
-router.patch("/tasks/:id", async (req, res) => {
+router.patch("/tasks/:id", auth, async (req, res) => {
   // adding validtion if try to update not relvant property
   const validUpdateArray = ["description", "complete"];
   const testingRequestProperties = Object.keys(req.body);
@@ -57,13 +69,18 @@ router.patch("/tasks/:id", async (req, res) => {
     // in order to insert midleware before save we need to change findbyidandupdate methode so we can
     // do somthing before save our model. this is an excresise from andrew
     // const task = await Task.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
-    const task = await Task.findById(req.params.id);
-    testingRequestProperties.forEach((update) => (task[update] = req.body[update]));
-    task.save();
+
+    // const task = await Task.findById(req.params.id);
+    const task = await Task.findOne({ _id: req.params.id, owner: req.user._id });
+
     if (!task) {
       console.log(chalk.red.inverse("Error: Task not found"));
       return res.status(400).send("Task not found");
     }
+
+    testingRequestProperties.forEach((update) => (task[update] = req.body[update]));
+    task.save();
+
     res.send(task);
   } catch (error) {
     res.status(404).send(error.message);
@@ -73,17 +90,18 @@ router.patch("/tasks/:id", async (req, res) => {
 
 // Delete
 
-router.delete("/tasks/:id", async (req, res) => {
+router.delete("/tasks/:id", auth, async (req, res) => {
   try {
-    const task = await Task.findByIdAndDelete(req.params.id);
+    // const task = await Task.findByIdAndDelete(req.params.id);
+    const task = await Task.findOneAndDelete({ _id: req.params.id, owner: req.user._id });
     if (!task) {
-      console.log(chalk.red.inverse("Error: Task not found"));
+      console.log(chalk.red.inverse(`Error: Task not found for user ${req.user.name}`));
       return res.status(404).send("task not found");
     }
     res.send(task);
   } catch (error) {
     res.status(500).send();
-    console.log(chalk.red(e.message));
+    console.log(chalk.red(error.message));
   }
 });
 

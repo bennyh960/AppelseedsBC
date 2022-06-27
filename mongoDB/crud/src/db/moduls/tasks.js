@@ -11,9 +11,10 @@ const taskSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
-  createdDate: {
-    type: String,
-    default: new Date(),
+  owner: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref: "User", // in order to conect relation between 2 models we must call it in same name
   },
 });
 

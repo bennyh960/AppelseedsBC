@@ -14,10 +14,6 @@ router.post("/users", async (req, res) => {
     await user.save();
     const token = await user.generateAuthToken();
     res.status(201).send({ user, token });
-    // ---
-
-    // await user.save();
-    // res.status(201).send(user);
   } catch (error) {
     // console.log(chalk.yellow(error.message));
     res.status(400).send(error.message);
@@ -38,6 +34,29 @@ router.post("/users/login", async (req, res) => {
 });
 // **************************
 
+// * Loggin Out
+router.post("/users/logout", auth, async (req, res) => {
+  try {
+    req.user.tokens = req.user.tokens.filter((token) => token.token !== req.token);
+    await req.user.save();
+    res.send();
+  } catch (error) {
+    res.status(500).send();
+  }
+});
+
+router.post("/users/logoutAll", auth, async (req, res) => {
+  try {
+    req.user.tokens = [];
+    await req.user.save();
+    res.send();
+  } catch (error) {
+    res.status(500).send();
+  }
+});
+
+// We dont want to allow connect users to be exposed to others data
+// i let this func to remain just for learning
 router.get("/users", async (req, res) => {
   try {
     const users = await User.find();
@@ -68,7 +87,8 @@ router.get("/users/:userID", async (req, res) => {
   }
 });
 
-router.patch("/users/:id", async (req, res) => {
+// router.patch("/users/:id", async (req, res) => {
+router.patch("/users/me", auth, async (req, res) => {
   const updates = Object.keys(req.body);
   const allowedUpdateArray = ["name", "email", "password", "age"];
   const isValidOperation = updates.every((update) => {
@@ -83,13 +103,15 @@ router.patch("/users/:id", async (req, res) => {
   try {
     // const user = await User.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
     // In order to insert midelware we change the code above into next 3 line of code
-    const user = await User.findById(req.params.id);
+    // const user = await User.findById(req.params.id);
+    const user = req.user;
     updates.forEach((update) => (user[update] = req.body[update]));
     await user.save();
 
-    if (!user) {
-      return res.status(404).send("User not found");
-    }
+    // not rellevant due to it just loged in (auth)
+    // if (!user) {
+    //   return res.status(404).send("User not found");
+    // }
     res.send(user);
   } catch (error) {
     // console.log(chalk.red(error.message));
@@ -97,14 +119,18 @@ router.patch("/users/:id", async (req, res) => {
   }
 });
 
-router.delete("/users/:id", async (req, res) => {
+// router.delete("/users/:id",auth, async (req, res) => {
+// const user = await User.findByIdAndDelete(req.params.id);
+router.delete("/users/me", auth, async (req, res) => {
   try {
-    const user = await User.findByIdAndDelete(req.params.id);
-    if (!user) {
-      // console.log(chalk.red.inverse("User not found error"));
-      return res.status(404).send("User not found");
-    }
-    res.send(user);
+    // const user = await User.findByIdAndDelete(req.user._id);
+    // if (!user) {
+    //   return res.status(404).send("User not found");
+    // }
+
+    await req.user.remove();
+
+    res.send(req.user);
   } catch (error) {
     console.log(chalk.red(error.message));
     res.status(500).send();

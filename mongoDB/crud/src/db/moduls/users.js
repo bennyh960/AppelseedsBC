@@ -3,6 +3,7 @@ const validator = require("validator");
 const chalk = require("chalk");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const Task = require("./tasks.js");
 
 // mongoose.connect("mongodb://127.0.0.1:27017/task-manager-api", {
 //   useNewUrlParser: true,
@@ -59,6 +60,24 @@ const userSchema = new mongoose.Schema({
   ],
 });
 
+// *virtual - relation betwwn user and tasks
+userSchema.virtual("tasks", {
+  ref: "Task",
+  localField: "_id",
+  foreignField: "owner",
+});
+
+// * show public data
+// userSchema.methods.getPublicProfile = function () {
+userSchema.methods.toJSON = function () {
+  const user = this;
+  const userObject = user.toObject();
+
+  delete userObject.password;
+  delete userObject.tokens;
+  return userObject;
+};
+
 // * func for token generate
 userSchema.methods.generateAuthToken = async function () {
   const user = this;
@@ -97,6 +116,14 @@ userSchema.pre("save", async function (next) {
 
   next(); //make sure next call inorder midlaware continue to next opertaion
 });
+
+// * Delete task when user is removed
+userSchema.pre("remove", async function (next) {
+  const user = this;
+  await Task.deleteMany({ owner: user._id });
+  next();
+});
+
 const User = mongoose.model("User", userSchema);
 
 module.exports = User;
