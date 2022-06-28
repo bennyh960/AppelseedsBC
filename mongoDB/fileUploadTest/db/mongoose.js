@@ -1,5 +1,15 @@
-// Step 2 - connect to the database
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/imagesInMongoApp", { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
-  console.log("connected to imagesInMongoApp DB");
-});
+
+mongoose
+  .connect("mongodb://127.0.0.1:27017/upload-img-test", {
+    // usefindAndModify: false,
+    // useCreateIndex: true,
+    autoIndex: true,
+    useNewUrlParser: true,
+  })
+  .then(() => {
+    console.log("Mongoose connect");
+  })
+  .catch((e) => {
+    console.log("Mongoose connecttin faild", e);
+  });
