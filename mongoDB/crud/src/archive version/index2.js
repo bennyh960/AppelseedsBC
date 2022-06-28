@@ -1,8 +1,8 @@
 const express = require("express");
 // const chalk = require("chalk");
-require("./db/mongoose");
-const User = require("./db/moduls/users");
-const Task = require("./db/moduls/tasks");
+require("../db/mongoose");
+const User = require("../db/moduls/users");
+const Task = require("../db/moduls/tasks");
 
 // ?=====================================================================
 //  First version with promisis. next version is with async await

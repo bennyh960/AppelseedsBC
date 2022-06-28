@@ -1,9 +1,9 @@
 const express = require("express");
-require("./db/mongoose");
+require("../db/mongoose");
 const chalk = require("chalk");
 
-const taskRouter = require("./routers/task.router.js");
-const userRouter = require("./routers/user.router.js");
+const taskRouter = require("../routers/task.router.js");
+const userRouter = require("../routers/user.router.js");
 
 const app = express();
 

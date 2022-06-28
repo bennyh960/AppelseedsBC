@@ -3,6 +3,8 @@ const { Router } = require("express");
 const chalk = require("chalk");
 const User = require("../db/moduls/users");
 const auth = require("../middelware/auth.js");
+const sharp = require("sharp");
+const multer = require("multer");
 const router = new Router();
 
 // ******** SIGN IN  *************
@@ -134,6 +136,71 @@ router.delete("/users/me", auth, async (req, res) => {
   } catch (error) {
     console.log(chalk.red(error.message));
     res.status(500).send();
+  }
+});
+
+// * UPLOAD WITH MULTER
+
+const upload = multer({
+  // dest: "avatars", // if we want save in file system  (if we want store on our db we must cancle it)
+  limits: {
+    fileSize: 1e6,
+  },
+  fileFilter(req, file, cb) {
+    if (!file.originalname.match(/\.(png|jpg|jpeg)$/)) {
+      cb(new Error("Please upload an image with max size of 1MB"));
+    }
+    cb(undefined, true); //accept the upload
+  },
+});
+
+// router.post("/users/me/avatar", upload.single("avatar"), (req, res) => {
+// ? for error handling express func get 3 args where the last is for error handling
+router.post(
+  "/users/me/avatar",
+  auth,
+  upload.single("avatar"),
+  async (req, res) => {
+    // * if we dont want modify pic
+    // req.user.avatar = req.file.buffer;
+
+    // * if we  want modify pic using sharp libary
+    const buffer = await sharp(req.file.buffer).resize({ width: 250, height: 250 }).png().toBuffer();
+    req.user.avatar = buffer;
+
+    await req.user.save();
+
+    //option 1 on client side we cant text this (option 2 see get methode)
+    // `<img src={data:image/jpg;base64,${req.file.buffer}} />`;
+    res.send("Ok");
+  },
+  (error, req, res, next) => {
+    res.status(400).send({ error: error.message });
+  }
+);
+
+//* delete image
+router.delete("/users/me/avatar", auth, async (req, res) => {
+  req.user.avatar = undefined;
+  await req.user.save();
+  res.status(200).send("Image deleted");
+});
+
+//* Get User avatar
+router.get("/users/:id/avatar", async (req, res) => {
+  try {
+    const user = await User.findById(req.params.id);
+
+    if (!user || !user.avatar) {
+      throw new Error();
+    }
+
+    res.set("Content-Type", "image/png");
+    res.send(user.avatar);
+    // option 2 on client side : <img src="http://localhost:3000/users/userID/avatar" />
+    //example userID = 62ba0fb908e77757705f127e
+  } catch (error) {
+    res.status(400).send();
   }
 });
 

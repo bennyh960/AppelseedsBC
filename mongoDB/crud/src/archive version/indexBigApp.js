@@ -1,7 +1,7 @@
 const express = require("express");
-require("./db/mongoose");
-const User = require("./db/moduls/users");
-const Task = require("./db/moduls/tasks");
+require("../db/mongoose");
+const User = require("../db/moduls/users");
+const Task = require("../db/moduls/tasks");
 
 const app = express();
 app.use(express.json());

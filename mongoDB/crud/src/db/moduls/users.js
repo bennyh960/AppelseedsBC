@@ -11,54 +11,60 @@ const Task = require("./tasks.js");
 // });
 
 // *
-const userSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-    trim: true,
-  },
-  email: {
-    type: String,
-    required: true,
-    unique: true,
-    trim: true,
-    lowercase: true,
-    validate(value) {
-      if (!validator.isEmail(value)) {
-        throw new Error("Email is invalid");
-      }
+const userSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+      trim: true,
     },
-  },
-  password: {
-    type: String,
-    required: true,
-    trim: true,
-    minlength: 7,
-    validae(value) {
-      if (value.toLowerCase().includes("password")) {
-        throw new Error("Password cannot contain 'password'");
-      }
-    },
-  },
-  age: {
-    type: Number,
-    default: 0,
-    // min: [12, "kids not allowed "],
-    validate(value) {
-      if (value < 0) {
-        throw new Error("Age must be positive number");
-      }
-    },
-  },
-  tokens: [
-    {
-      token: {
-        type: String,
-        require: true,
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+      trim: true,
+      lowercase: true,
+      validate(value) {
+        if (!validator.isEmail(value)) {
+          throw new Error("Email is invalid");
+        }
       },
     },
-  ],
-});
+    password: {
+      type: String,
+      required: true,
+      trim: true,
+      minlength: 7,
+      validae(value) {
+        if (value.toLowerCase().includes("password")) {
+          throw new Error("Password cannot contain 'password'");
+        }
+      },
+    },
+    age: {
+      type: Number,
+      default: 0,
+      // min: [12, "kids not allowed "],
+      validate(value) {
+        if (value < 0) {
+          throw new Error("Age must be positive number");
+        }
+      },
+    },
+    tokens: [
+      {
+        token: {
+          type: String,
+          require: true,
+        },
+      },
+    ],
+    avatar: {
+      type: Buffer,
+    },
+  },
+  { timestamps: true }
+);
 
 // *virtual - relation betwwn user and tasks
 userSchema.virtual("tasks", {
@@ -75,6 +81,7 @@ userSchema.methods.toJSON = function () {
 
   delete userObject.password;
   delete userObject.tokens;
+  delete userObject.avatar;
   return userObject;
 };
 

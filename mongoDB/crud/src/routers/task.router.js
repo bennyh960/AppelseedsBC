@@ -19,12 +19,42 @@ router.post("/tasks", auth, async (req, res) => {
   }
 });
 
+// GET tasks?complete=true
+// GET tasks?limit=2&skip=2
+// GET tasks?sortBy=createdAt:asc dsc
+
 router.get("/tasks", auth, async (req, res) => {
+  const match = {};
+  const sort = {};
+
+  if (req.query.complete) {
+    match.complete = req.query.complete === "true";
+  }
+
+  if (req.query.sortBy) {
+    // sort.createdAt = req.query.sortBy === "dsc" ? -1 : 1; // user just set asc or dsc and not sort by
+    const parts = req.query.sortBy.split(":");
+    sort.parts[0] = parts[1] === "desc" ? -1 : 1;
+  }
   try {
     // const tasks = await Task.find({ owner: req.user._id });
-    await req.user.populate("tasks").execPopulate();
+    // await req.user.populate("tasks").execPopulate();
+    await req.user
+      .populate({
+        path: "tasks",
+        match,
+        // match: {
+        //   complete: false,
+        // },
+        options: {
+          limit: parseInt(req.query.limit),
+          skip: parseInt(req.query.skip),
+          sort,
+        },
+      })
+      .execPopulate();
 
-    res.send(tasks);
+    res.send(req.user.tasks);
   } catch (e) {
     res.status(500).send(e.message);
     console.log(chalk.red(e.message));
